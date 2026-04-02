@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component — Cork Solar &amp; Electrical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* =====================================================
+           CSAE FOOTER COMPONENT STYLES
+           Prefix: csae-footer__ — scoped to avoid conflicts
+        ===================================================== */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .csae-footer {
+            background: #0e2646;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            border-top: 3px solid #6DC535;
+        }
+
+        /* ---- Main grid ---- */
+        .csae-footer__main {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 60px 28px 48px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr 0.9fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* ---- Logo column ---- */
+        .csae-footer__logo-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .csae-footer__logo-img {
+            max-height: 80px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .csae-footer__bio {
+            margin-top: 16px;
+            font-size: 0.875rem;
+            color: #a8bfd4;
+            line-height: 1.7;
+            max-width: 220px;
+        }
+
+        .csae-footer__social {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .csae-footer__social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .csae-footer__social-link:hover {
+            background: #6DC535;
+            border-color: #6DC535;
+        }
+
+        .csae-footer__social-link svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+
+        /* ---- Nav columns ---- */
+        .csae-footer__col-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.6875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6DC535;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(109, 197, 53, 0.25);
+        }
+
+        .csae-footer__links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .csae-footer__link {
+            display: block;
+            color: #a8bfd4;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.4;
+            transition: color 0.2s, padding-left 0.15s;
+        }
+
+        .csae-footer__link:hover {
+            color: #6DC535;
+            padding-left: 5px;
+        }
+
+        /* ---- Contact column ---- */
+        .csae-footer__contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .csae-footer__contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .csae-footer__contact-icon {
+            width: 30px;
+            height: 30px;
+            background: rgba(109, 197, 53, 0.1);
+            border: 1px solid rgba(109, 197, 53, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .csae-footer__contact-icon svg {
+            width: 13px;
+            height: 13px;
+            fill: #6DC535;
+        }
+
+        .csae-footer__contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .csae-footer__contact-label {
+            font-size: 0.625rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6DC535;
+        }
+
+        .csae-footer__contact-value {
+            font-size: 0.875rem;
+            color: #ffffff;
+            font-weight: 400;
+            line-height: 1.5;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a.csae-footer__contact-value:hover {
+            color: #6DC535;
+        }
+
+        /* ---- Bottom bar ---- */
+        .csae-footer__bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .csae-footer__bottom-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .csae-footer__copyright {
+            font-size: 0.75rem;
+            color: #5a7a99;
+        }
+
+        .csae-footer__bottom-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .csae-footer__bottom-link {
+            font-size: 0.75rem;
+            color: #5a7a99;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .csae-footer__bottom-link:hover {
+            color: #6DC535;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 1024px) {
+            .csae-footer__main {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+            }
+
+            .csae-footer__logo-col {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .csae-footer__main {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+                padding: 40px 18px 36px;
+            }
+
+            .csae-footer__logo-col {
+                grid-column: 1 / -1;
+            }
+
+            .csae-footer__contact-col {
+                grid-column: 1 / -1;
+            }
+
+            .csae-footer__bottom-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 18px;
+            }
+        }
+
+        /* ---- Preview only ---- */
+        body {
+            background: #081a30;
+        }
+    </style>
+</head>
+<body>
+
+<!-- =============================================================
+     CSAE FOOTER COMPONENT
+     Copy the <footer> element, its <style> block, and the
+     <script> into each page. Logo from assets/csae-logo-2.png.
+============================================================= -->
+
+<!-- START CSAE FOOTER -->
+<footer class="csae-footer" id="csae-footer">
+
+    <div class="csae-footer__main">
+
+        <!-- Logo -->
+        <div class="csae-footer__logo-col">
+            <a href="index.html" class="csae-footer__logo-link" aria-label="Cork Solar &amp; Electrical — Home">
+                <img src="assets/csae-logo-2.png" alt="Cork Solar &amp; Electrical" class="csae-footer__logo-img" width="160" height="80">
+            </a>
+            <p class="csae-footer__bio">Cork Solar &amp; Electrical are SEAI approved electricians serving Cork City and County. Specialists in residential and commercial electrical installations and solar energy systems.</p>
+            <div class="csae-footer__social">
+                <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Facebook">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    </svg>
+                </a>
+                <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="csae-footer__col-title">Quick Links</h3>
+            <ul class="csae-footer__links">
+                <li><a href="index.html" class="csae-footer__link">Home</a></li>
+                <li><a href="about.html" class="csae-footer__link">About Us</a></li>
+                <li><a href="residential.html" class="csae-footer__link">Residential</a></li>
+                <li><a href="commercial.html" class="csae-footer__link">Commercial</a></li>
+                <li><a href="solar.html" class="csae-footer__link">Solar</a></li>
+                <li><a href="contact.html" class="csae-footer__link">Contact</a></li>
+                <li><a href="contact.html" class="csae-footer__link">Get a Quote</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="csae-footer__contact-col">
+            <h3 class="csae-footer__col-title">Contact Us</h3>
+            <ul class="csae-footer__contact-list">
+
+                <li class="csae-footer__contact-item">
+                    <span class="csae-footer__contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V21a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.19z"/>
+                        </svg>
+                    </span>
+                    <div class="csae-footer__contact-text">
+                        <span class="csae-footer__contact-label">Phone</span>
+                        <a href="tel:0852168789" class="csae-footer__contact-value">085 216 8789</a>
+                    </div>
+                </li>
+
+                <li class="csae-footer__contact-item">
+                    <span class="csae-footer__contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="#6DC535" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" fill="none" stroke="#6DC535" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <div class="csae-footer__contact-text">
+                        <span class="csae-footer__contact-label">Email</span>
+                        <a href="mailto:corksolarandelectrical@gmail.com" class="csae-footer__contact-value">corksolarandelectrical@gmail.com</a>
+                    </div>
+                </li>
+
+                <li class="csae-footer__contact-item">
+                    <span class="csae-footer__contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" fill="none" stroke="#6DC535" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" fill="none" stroke="#6DC535" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <div class="csae-footer__contact-text">
+                        <span class="csae-footer__contact-label">Address</span>
+                        <span class="csae-footer__contact-value">Railway Cottage, Ballinamona,<br>Mourneabbey, Mallow, Co. Cork</span>
+                    </div>
+                </li>
+
+                <li class="csae-footer__contact-item">
+                    <span class="csae-footer__contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke="#6DC535" stroke-width="2"/>
+                            <polyline points="12,7 12,12 15,15" stroke="#6DC535" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <div class="csae-footer__contact-text">
+                        <span class="csae-footer__contact-label">Opening Hours</span>
+                        <span class="csae-footer__contact-value">Mon – Fri: 8am – 6pm<br>Sat: By Appointment</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div>
+            <h3 class="csae-footer__col-title">Opening Hours</h3>
+            <ul class="csae-footer__links">
+                <li><span class="csae-footer__link" style="cursor: default;">Monday – Friday<br><strong style="color: #ffffff;">8am – 6pm</strong></span></li>
+                <li><span class="csae-footer__link" style="cursor: default;">Saturday<br><strong style="color: #ffffff;">By Appointment</strong></span></li>
+                <li><span class="csae-footer__link" style="cursor: default;">Sunday<br><strong style="color: #ffffff;">Closed</strong></span></li>
+            </ul>
+        </div>
+
+    </div><!-- /.csae-footer__main -->
+
+    <!-- Bottom bar -->
+    <div class="csae-footer__bottom">
+        <div class="csae-footer__bottom-inner">
+            <p class="csae-footer__copyright">
+                &copy; <span id="csae-year">2025</span> Cork Solar &amp; Electrical. All rights reserved.
+            </p>
+            <ul class="csae-footer__bottom-links">
+                <li><a href="#" class="csae-footer__bottom-link">Privacy Policy</a></li>
+                <li><a href="#" class="csae-footer__bottom-link">Terms &amp; Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+<!-- END CSAE FOOTER -->
+
+<script>
+    var el = document.getElementById('csae-year');
+    if (el) el.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
