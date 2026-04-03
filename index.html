@@ -58,7 +58,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #1B2A4A;
+            color: #111111;
             background: #ffffff;
             line-height: 1.6;
         }
@@ -74,7 +74,7 @@
             top: 0; left: 0;
             width: 100%;
             z-index: 9999;
-            background: #0e2646;
+            background: #111111;
             border-bottom: 1px solid rgba(255,255,255,0.15);
             font-family: 'Inter', sans-serif;
         }
@@ -151,7 +151,7 @@
             top: 100%; left: 50%;
             transform: translateX(-50%);
             padding-top: 18px;
-            background: #1B2A4A;
+            background: #111111;
             border: 1px solid rgba(109,197,53,0.2);
             border-top: 3px solid #6DC535;
             min-width: 270px;
@@ -371,7 +371,7 @@
         ===================================================== */
 
         .csae-footer {
-            background: #0e2646;
+            background: #111111;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             border-top: 3px solid #6DC535;
@@ -484,7 +484,7 @@
         ===================================================== */
 
         .csae-section { padding: 80px 0; }
-        .csae-section--dark { background: #0e2646; color: #ffffff; }
+        .csae-section--dark { background: #111111; color: #ffffff; }
         #why-us {
             background-image: url('assets/why-choose-us.jpg.png');
             background-attachment: fixed;
@@ -496,11 +496,11 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(14, 38, 70, 0.92);
+            background: rgba(17,17,17,0.90);
             pointer-events: none;
         }
         #why-us > * { position: relative; z-index: 1; }
-        .csae-section--navy { background: #1B2A4A; color: #ffffff; }
+        .csae-section--navy { background: #111111; color: #ffffff; }
         .csae-section--light { background: #F5F5F5; }
         .csae-section--white { background: #ffffff; }
 
@@ -554,7 +554,7 @@
         .csae-btn--green { background: #6DC535; color: #ffffff; border-color: #6DC535; }
         .csae-btn--green:hover { background: transparent; color: #6DC535; }
         .csae-btn--outline-white { background: transparent; color: #ffffff; border-color: #ffffff; }
-        .csae-btn--outline-white:hover { background: #ffffff; color: #0e2646; }
+        .csae-btn--outline-white:hover { background: #ffffff; color: #111111; }
         .csae-btn--outline-green { background: transparent; color: #6DC535; border-color: #6DC535; }
         .csae-btn--outline-green:hover { background: #6DC535; color: #ffffff; }
 
@@ -572,7 +572,7 @@
         .csae-hero__bg {
             position: absolute;
             inset: 0;
-            background-color: #1B2A4A;
+            background-color: #111111;
             background-image: url('assets/hero-home.jpg.png');
             background-size: cover;
             background-position: center;
@@ -581,7 +581,7 @@
         .csae-hero__overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(100deg, rgba(14,38,70,0.88) 35%, rgba(109,197,53,0.25) 100%);
+            background: linear-gradient(105deg, rgba(17,17,17,0.97) 30%, rgba(17,17,17,0.6) 65%, rgba(109,197,53,0.18) 100%);
         }
 
         .csae-hero__content {
@@ -629,12 +629,44 @@
             flex-wrap: wrap;
         }
 
+        .csae-hero__badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .csae-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        .csae-hero__badge svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: #6DC535;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
         /* =====================================================
            2. STATS BAR
         ===================================================== */
 
         .csae-stats {
-            background: #0e2646;
+            background: #111111;
             border-top: 1px solid rgba(109,197,53,0.2);
             border-bottom: 1px solid rgba(109,197,53,0.2);
             padding: 0;
@@ -695,7 +727,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: clamp(1.8rem, 1.7077rem + 0.4103vw, 2rem);
-            color: #1B2A4A;
+            color: #111111;
             margin-bottom: 24px;
             padding-bottom: 12px;
             border-bottom: 2px solid #6DC535;
@@ -755,7 +787,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: clamp(1.4rem, 1.3538rem + 0.2051vw, 1.5rem);
-            color: #1B2A4A;
+            color: #111111;
             line-height: 1.3;
         }
 
@@ -833,7 +865,7 @@
         }
 
         .csae-highlight__image {
-            background-color: #1B2A4A;
+            background-color: #111111;
             background-size: cover;
             background-position: center;
             min-height: 400px;
@@ -850,7 +882,7 @@
         .csae-highlight__content .csae-section-intro { margin-bottom: 32px; }
 
         .csae-highlight--dark .csae-highlight__content {
-            background: #0e2646;
+            background: #111111;
             color: #ffffff;
         }
 
@@ -909,7 +941,7 @@
 
         .csae-review-card__avatar {
             width: 42px; height: 42px;
-            background: #0e2646;
+            background: #111111;
             display: flex; align-items: center; justify-content: center;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
@@ -921,7 +953,7 @@
         .csae-review-card__name {
             font-weight: 700;
             font-size: 0.875rem;
-            color: #1B2A4A;
+            color: #111111;
         }
 
         .csae-review-card__badge {
@@ -1022,7 +1054,7 @@
         .csae-form__textarea:focus { border-color: #6DC535; }
 
         .csae-form__select { cursor: pointer; }
-        .csae-form__select option { background: #0e2646; color: #ffffff; }
+        .csae-form__select option { background: #111111; color: #ffffff; }
 
         .csae-form__textarea { resize: vertical; min-height: 110px; }
 
@@ -1257,11 +1289,25 @@
             <div class="csae-hero__overlay" aria-hidden="true"></div>
             <div class="csae-hero__content">
                 <span class="csae-hero__label">SEAI Approved &bull; Cork City &amp; County</span>
-                <h1>Electricians &amp; <span>Solar Specialists</span><br>in Cork</h1>
-                <p class="csae-hero__sub">Trusted residential and commercial electricians serving Cork City, Mallow and County Cork. From house rewires to solar panel installations — fully insured, SEAI approved.</p>
+                <h1>Trusted <span>Electricians</span> in Cork City &amp; County</h1>
+                <p class="csae-hero__sub">From house rewires to emergency callouts, Cork Solar &amp; Electrical deliver fast, reliable electrical services for homes and businesses across Cork. SEAI approved. Fully insured.</p>
                 <div class="csae-hero__ctas">
                     <a href="contact.html" class="csae-btn csae-btn--green">Get a Free Quote</a>
                     <a href="tel:0852168789" class="csae-btn csae-btn--outline-white">Call Us: 085 216 8789</a>
+                </div>
+                <div class="csae-hero__badges">
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        SEAI Approved
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Safe Electric Registered
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Fully Insured
+                    </span>
                 </div>
             </div>
         </section>
@@ -1293,8 +1339,8 @@
             <div class="csae-container">
                 <div class="csae-services__header">
                     <span class="csae-section-label">What We Do</span>
-                    <h2 class="csae-section-title" id="services-heading">Our Electrical &amp; Solar Services</h2>
-                    <p class="csae-section-intro">From house rewires to commercial fit-outs and solar installations — Cork Solar &amp; Electrical delivers reliable, high-quality electrical work across Cork City and County.</p>
+                    <h2 class="csae-section-title" id="services-heading">Our Electrical Services</h2>
+                    <p class="csae-section-intro">Residential &amp; Commercial electrical work across Cork City and County</p>
                 </div>
 
                 <div class="csae-services__groups">
@@ -1424,8 +1470,8 @@
             <div class="csae-highlight__image" style="background-image: url('assets/hero-residential.jpg.png');" aria-label="Electrician installing consumer unit in Cork home"></div>
             <div class="csae-highlight__content">
                 <span class="csae-section-label">For Your Home</span>
-                <h2 class="csae-section-title" id="res-heading">Residential Electrical Services Cork</h2>
-                <p class="csae-section-intro">Whether you need a full house rewire, a new fuse board, EV charger installation or lighting upgrades — Cork Solar &amp; Electrical provides expert residential electrical services throughout Cork City and County Cork. All work is completed to the highest Irish standard and fully certified.</p>
+                <h2 class="csae-section-title" id="res-heading">Residential Electrical Services in Cork</h2>
+                <p class="csae-section-intro">From full house rewires and fuse board upgrades to emergency callouts and periodic inspection reports (PIRs) — Cork Solar &amp; Electrical provides expert residential electrical services throughout Cork City and County Cork. All work is completed to the highest Irish standard and fully certified.</p>
                 <a href="residential.html" class="csae-btn csae-btn--green">View Residential Services</a>
             </div>
         </section>
@@ -1434,8 +1480,8 @@
         <section class="csae-highlight csae-highlight--dark" aria-labelledby="com-heading">
             <div class="csae-highlight__content">
                 <span class="csae-section-label">For Your Business</span>
-                <h2 class="csae-section-title" id="com-heading">Commercial Electrical Services Cork</h2>
-                <p class="csae-section-intro">From office fit-outs and factory wiring to LED lighting upgrades and electrical maintenance contracts — we deliver dependable commercial electrical services for businesses across Cork. RECI registered and fully insured.</p>
+                <h2 class="csae-section-title" id="com-heading">Commercial Electrical Services in Cork</h2>
+                <p class="csae-section-intro">From office and retail fitouts to ongoing maintenance contracts and periodic electrical inspections — we keep businesses across Cork powered and compliant. RECI registered and fully insured.</p>
                 <a href="commercial.html" class="csae-btn csae-btn--outline-white">View Commercial Services</a>
             </div>
             <div class="csae-highlight__image" style="background-image: url('assets/hero-commercial.jpg.png');" aria-label="Commercial electrician working in Cork office or retail fitout">
