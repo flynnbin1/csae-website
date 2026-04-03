@@ -183,6 +183,7 @@
 
         /* ---- Bottom bar ---- */
         .csae-footer__bottom {
+            background: #0a0a0a;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -235,7 +236,7 @@
             .csae-footer__main {
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
-                padding: 40px 18px 36px;
+                padding: 40px 20px 36px;
             }
 
             .csae-footer__logo-col {
@@ -249,13 +250,56 @@
             .csae-footer__bottom-inner {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 16px 18px;
+                padding: 16px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .csae-footer__main {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 44px 16px 40px;
+            }
+
+            .csae-footer__logo-col,
+            .csae-footer__contact-col {
+                grid-column: 1;
+            }
+
+            .csae-footer__bio {
+                max-width: 100%;
+            }
+
+            .csae-footer__social {
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .csae-footer__social-link {
+                width: 44px;
+                height: 44px;
+            }
+
+            .csae-footer__social-link svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .csae-footer__bottom-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px;
+                gap: 8px;
+            }
+
+            .csae-footer__bottom-links {
+                gap: 16px;
             }
         }
 
         /* ---- Preview only ---- */
         body {
-            background: #081a30;
+            background: #111111;
         }
     </style>
 </head>

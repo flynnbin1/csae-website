@@ -236,7 +236,7 @@
         .csae-header__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         .csae-header__mobile-nav {
             display: none;
-            background: #162238;
+            background: #111111;
             border-top: 1px solid rgba(109,197,53,0.2);
             overflow: hidden;
             max-height: 0;
@@ -363,7 +363,13 @@
             .csae-header__mobile-nav { display: block; }
         }
         @media (max-width: 480px) {
-            .csae-header__inner { padding: 0 18px; }
+            .csae-header__inner { padding: 0 16px; gap: 12px; }
+            .csae-header__logo-mark { max-height: 55px; }
+            .csae-header__hamburger { width: 44px; height: 44px; }
+            .csae-header__mobile-link { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-header__mobile-accordion { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-header__mobile-sub-link { padding: 11px 20px 11px 36px; font-size: 0.9375rem; }
+            .csae-header__mobile-cta-btn { padding: 18px 24px; font-size: 1rem; }
         }
 
         /* =====================================================
@@ -471,6 +477,14 @@
         @media (max-width: 640px) {
             .csae-footer__main { grid-template-columns: 1fr; gap: 32px; padding: 40px 18px 36px; }
             .csae-footer__bottom-inner { flex-direction: column; align-items: flex-start; padding: 16px 18px; }
+        }
+        @media (max-width: 480px) {
+            .csae-footer__main { gap: 36px; padding: 40px 16px 36px; }
+            .csae-footer__social { gap: 12px; margin-top: 20px; }
+            .csae-footer__social-link { width: 44px; height: 44px; }
+            .csae-footer__social-link svg { width: 20px; height: 20px; }
+            .csae-footer__bottom-inner { padding: 16px; gap: 8px; }
+            .csae-footer__bottom-links { gap: 16px; }
         }
 
         /* =====================================================
@@ -1103,60 +1117,77 @@
             .csae-form__inner { grid-template-columns: 1fr; gap: 40px; }
         }
 
-        /* ---- Mobile: up to 768px ---- */
+        /* ---- Tablet: up to 768px ---- */
         @media (max-width: 768px) {
-            .csae-section { padding: 56px 0; }
-            .csae-container { padding: 0 18px; }
+            .csae-section { padding: 60px 0; }
+            .csae-container { padding: 0 20px; }
             /* Hero */
             .csae-hero { min-height: 85vh; }
-            .csae-hero__content { padding: 0 18px; }
-            /* Stats: keep 2x2 on small tablet/large mobile */
+            .csae-hero__content { padding: 0 20px; }
+            /* Stats: 2x2 */
             .csae-stats__grid { grid-template-columns: repeat(2, 1fr); }
             /* Service cards: 2 columns */
             .csae-services__cards { grid-template-columns: 1fr 1fr; }
             /* Why choose us: 2 columns */
-            .csae-why__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-            /* Highlight image always on top when stacked */
+            .csae-why__grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+            /* Highlights: image on top, button full width */
             .csae-highlight__image { order: -1; min-height: 260px; }
-            .csae-highlight__content { padding: 40px 24px; }
+            .csae-highlight__content { padding: 44px 28px; }
+            .csae-highlight__content .csae-btn { display: block; text-align: center; }
             /* Reviews: single column */
             .csae-reviews__grid { grid-template-columns: 1fr; }
-            /* Form */
+            /* Form: single column, bigger tap targets */
             .csae-form__row { grid-template-columns: 1fr; }
-            .csae-form__form { padding: 28px 20px; }
+            .csae-form__form { padding: 32px 24px; }
             .csae-form__inner { grid-template-columns: 1fr; gap: 36px; }
+            .csae-form__input,
+            .csae-form__select,
+            .csae-form__textarea { min-height: 52px; font-size: 1rem; padding: 14px 16px; }
+            .csae-form__submit { padding: 16px; font-size: 1rem; }
         }
 
         /* ---- Mobile: up to 480px ---- */
         @media (max-width: 480px) {
-            .csae-section { padding: 44px 0; }
+            .csae-section { padding: 52px 0; }
             .csae-container { padding: 0 16px; }
-            /* Hero: stack buttons, reduce padding */
-            .csae-hero { min-height: 90vh; }
+            /* Hero */
+            .csae-hero { min-height: unset; padding: 80px 0 60px; align-items: flex-start; }
             .csae-hero__content { padding: 0 16px; }
-            .csae-hero__ctas { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .csae-hero h1 { font-size: clamp(2.2rem, 8.5vw, 2.8rem); }
+            .csae-hero__sub { font-size: 1rem; line-height: 1.6; }
+            .csae-hero__ctas { flex-direction: column; align-items: stretch; gap: 12px; }
             .csae-hero__ctas .csae-btn { width: 100%; text-align: center; }
-            /* Stats: single column */
-            .csae-stats__grid { grid-template-columns: 1fr; }
-            .csae-stats__item { border-right: none; border-top: 1px solid rgba(255,255,255,0.08); }
-            .csae-stats__item:first-child { border-top: none; }
+            .csae-hero__badges { gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+            .csae-hero__badge { font-size: 0.6875rem; padding: 5px 12px; }
+            /* Stats: 2x2 grid with bigger numbers */
+            .csae-stats__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-stats__item { padding: 24px 16px; border-right: none; border-top: none; }
+            .csae-stats__item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+            .csae-stats__item:nth-child(3),
+            .csae-stats__item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+            .csae-stats__number { font-size: clamp(2.2rem, 8vw, 2.8rem); }
             /* Service cards: single column */
             .csae-services__cards { grid-template-columns: 1fr; }
+            .csae-services__group-title { font-size: 1.25rem; }
             /* Why choose us: single column */
-            .csae-why__grid { grid-template-columns: 1fr; gap: 24px; }
-            /* Highlight */
-            .csae-highlight__content { padding: 36px 16px; }
-            .csae-highlight__image { min-height: 220px; }
-            /* Reviews */
+            .csae-why__grid { grid-template-columns: 1fr; gap: 28px; }
+            .csae-why__item { padding: 4px 0; }
+            /* Highlights: full width button */
+            .csae-highlight__content { padding: 40px 20px; }
+            .csae-highlight__image { min-height: 240px; }
+            .csae-highlight__content .csae-btn { display: block; width: 100%; text-align: center; }
+            /* Reviews: single column */
             .csae-reviews__grid { grid-template-columns: 1fr; }
-            /* Form: full width */
-            .csae-form__form { padding: 24px 16px; }
+            /* Form: full width, bigger tap targets */
+            .csae-form__form { padding: 28px 16px; }
             .csae-form__row { grid-template-columns: 1fr; gap: 0; }
-            .csae-form__submit { font-size: 0.875rem; padding: 15px; }
-            /* Services group title wraps */
-            .csae-services__group-title { font-size: clamp(1.4rem, 1.3538rem + 0.2051vw, 1.5rem); }
-            /* Section titles */
-            .csae-section-title { font-size: clamp(1.8rem, 1.7077rem + 0.4103vw, 2rem); }
+            .csae-form__input,
+            .csae-form__select,
+            .csae-form__textarea { min-height: 54px; font-size: 1rem; padding: 15px 16px; }
+            .csae-form__submit { font-size: 1rem; padding: 18px; }
+            /* Section typography */
+            .csae-section-title { font-size: clamp(1.6rem, 6vw, 2rem); }
+            .csae-section-intro { font-size: 0.9375rem; line-height: 1.65; }
         }
     </style>
 </head>

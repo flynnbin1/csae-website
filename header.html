@@ -259,7 +259,7 @@
         /* ---- Mobile Navigation Panel ---- */
         .csae-header__mobile-nav {
             display: none;
-            background: #162238;
+            background: #111111;
             border-top: 1px solid rgba(109, 197, 53, 0.2);
             overflow: hidden;
             max-height: 0;
@@ -444,12 +444,13 @@
         }
 
         @media (max-width: 480px) {
-            .csae-header__inner {
-                padding: 0 18px;
-            }
-            .csae-header__logo-text {
-                display: none;
-            }
+            .csae-header__inner { padding: 0 16px; gap: 12px; }
+            .csae-header__logo-mark { max-height: 55px; }
+            .csae-header__hamburger { width: 44px; height: 44px; }
+            .csae-header__mobile-link { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-header__mobile-accordion { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-header__mobile-sub-link { padding: 11px 20px 11px 36px; font-size: 0.9375rem; }
+            .csae-header__mobile-cta-btn { padding: 18px 24px; font-size: 1rem; }
         }
 
         /* ---- Preview Page Styles (remove when embedding) ---- */
