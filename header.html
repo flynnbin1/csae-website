@@ -256,71 +256,117 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* ---- Mobile Navigation Panel ---- */
-        .csae-header__mobile-nav {
-            display: none;
+        /* ---- Side Drawer ---- */
+        .csae-drawer__overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9997;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.32s ease, visibility 0.32s ease;
+            cursor: pointer;
+        }
+
+        .csae-drawer__overlay.csae-drawer--visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .csae-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100dvh;
+            width: 82%;
+            max-width: 340px;
             background: #111111;
-            border-top: 1px solid rgba(109, 197, 53, 0.2);
+            border-left: 1px solid rgba(109, 197, 53, 0.2);
+            z-index: 9998;
+            transform: translateX(100%);
+            transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.4s ease;
         }
 
-        .csae-header__mobile-nav[aria-hidden="false"] {
-            max-height: 1200px;
+        .csae-drawer.csae-drawer--open {
+            transform: translateX(0);
         }
 
-        .csae-header__mobile-link {
+        .csae-drawer__head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        .csae-drawer__logo-img {
+            max-height: 90px;
+            width: auto;
             display: block;
-            padding: 13px 24px;
-            color: #e8edf5;
+            object-fit: contain;
+        }
+
+        .csae-drawer__close {
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .csae-drawer__close:hover {
+            border-color: #6DC535;
+            color: #6DC535;
+        }
+
+        .csae-drawer__close svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+        }
+
+        .csae-drawer__body {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .csae-drawer__link {
+            display: block;
+            padding: 16px 24px;
+            color: #ffffff;
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: color 0.2s, padding-left 0.2s;
+            transition: color 0.2s;
         }
 
-        .csae-header__mobile-link:hover {
+        .csae-drawer__link:hover,
+        .csae-drawer__link.csae-active {
             color: #6DC535;
-            padding-left: 32px;
         }
 
-        .csae-header__mobile-group-title {
-            padding: 14px 24px 6px;
-            font-size: 0.625rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #6DC535;
-            background: rgba(109, 197, 53, 0.05);
-            border-bottom: 1px solid rgba(109, 197, 53, 0.1);
-        }
-
-        .csae-header__mobile-sub-link {
-            display: block;
-            padding: 10px 24px 10px 40px;
-            color: #8fa8c0;
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 400;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            transition: color 0.2s, padding-left 0.2s;
-        }
-
-        .csae-header__mobile-sub-link:hover {
-            color: #6DC535;
-            padding-left: 46px;
-        }
-
-        /* ---- Mobile Accordion ---- */
-        .csae-header__mobile-accordion {
+        .csae-drawer__accordion {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 13px 24px;
-            color: #e8edf5;
+            padding: 16px 24px;
+            color: #ffffff;
             background: none;
             border: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -329,41 +375,47 @@
             font-weight: 500;
             cursor: pointer;
             text-align: left;
-            transition: color 0.2s;
+            transition: color 0.2s, background 0.2s;
         }
 
-        .csae-header__mobile-accordion:hover {
+        .csae-drawer__accordion:hover {
             color: #6DC535;
         }
 
-        .csae-header__mobile-accordion[aria-expanded="true"] {
+        .csae-drawer__accordion[aria-expanded="true"] {
             color: #6DC535;
-            border-bottom-color: rgba(109, 197, 53, 0.15);
+            border-bottom-color: rgba(109, 197, 53, 0.2);
+            background: rgba(109, 197, 53, 0.04);
         }
 
-        .csae-header__mobile-accordion__chevron {
+        .csae-drawer__chevron {
             width: 16px;
             height: 16px;
             flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
             transition: transform 0.3s ease;
         }
 
-        .csae-header__mobile-accordion[aria-expanded="true"] .csae-header__mobile-accordion__chevron {
+        .csae-drawer__accordion[aria-expanded="true"] .csae-drawer__chevron {
             transform: rotate(180deg);
         }
 
-        .csae-header__mobile-accordion-panel {
+        .csae-drawer__accordion-panel {
             overflow: hidden;
             max-height: 0;
             transition: max-height 0.35s ease;
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.2);
         }
 
-        .csae-header__mobile-accordion-panel.csae-acc-open {
-            max-height: 1200px;
+        .csae-drawer__accordion-panel.csae-acc-open {
+            max-height: 800px;
         }
 
-        .csae-header__mobile-acc-all {
+        .csae-drawer__all-link {
             display: block;
             padding: 11px 24px 11px 28px;
             color: #6DC535;
@@ -377,44 +429,41 @@
             transition: background 0.2s;
         }
 
-        .csae-header__mobile-acc-all:hover {
+        .csae-drawer__all-link:hover {
             background: rgba(109, 197, 53, 0.14);
         }
 
-        .csae-header__mobile-actions {
-            padding: 20px 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            border-top: 1px solid rgba(109, 197, 53, 0.2);
-        }
-
-        .csae-header__mobile-phone-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ffffff;
+        .csae-drawer__sub-link {
+            display: block;
+            padding: 11px 24px 11px 32px;
+            color: #a8bfd4;
             text-decoration: none;
-            font-size: 1.125rem;
-            font-weight: 700;
+            font-size: 0.875rem;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: color 0.2s;
         }
 
-        .csae-header__mobile-phone-link svg {
-            width: 20px;
-            height: 20px;
-            fill: #6DC535;
+        .csae-drawer__sub-link:hover {
+            color: #6DC535;
+        }
+
+        .csae-drawer__foot {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             flex-shrink: 0;
         }
 
-        .csae-header__mobile-cta-btn {
+        .csae-drawer__cta {
             display: block;
+            width: 100%;
             background: #6DC535;
             color: #ffffff;
             text-decoration: none;
             font-family: 'Inter', sans-serif;
             font-size: 0.875rem;
             font-weight: 700;
-            padding: 15px 24px;
+            padding: 16px 24px;
             text-align: center;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -422,7 +471,7 @@
             transition: background 0.2s, color 0.2s;
         }
 
-        .csae-header__mobile-cta-btn:hover {
+        .csae-drawer__cta:hover {
             background: transparent;
             color: #6DC535;
         }
@@ -438,19 +487,16 @@
             .csae-header__hamburger {
                 display: flex;
             }
-            .csae-header__mobile-nav {
-                display: block;
-            }
         }
 
         @media (max-width: 480px) {
             .csae-header__inner { padding: 0 16px; gap: 12px; }
             .csae-header__logo-mark { max-height: 80px; }
             .csae-header__hamburger { width: 44px; height: 44px; }
-            .csae-header__mobile-link { font-size: 1.0625rem; padding: 15px 20px; }
-            .csae-header__mobile-accordion { font-size: 1.0625rem; padding: 15px 20px; }
-            .csae-header__mobile-sub-link { padding: 11px 20px 11px 36px; font-size: 0.9375rem; }
-            .csae-header__mobile-cta-btn { padding: 18px 24px; font-size: 1rem; }
+            .csae-drawer__link { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-drawer__accordion { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-drawer__sub-link { padding: 11px 20px 11px 36px; font-size: 0.9375rem; }
+            .csae-drawer__cta { padding: 18px 24px; font-size: 1rem; }
         }
 
         /* ---- Preview Page Styles (remove when embedding) ---- */
@@ -589,80 +635,77 @@
 
     </div><!-- /.csae-header__inner -->
 
-    <!-- Mobile Navigation Panel -->
-    <nav
-        class="csae-header__mobile-nav"
-        id="csae-mobile-nav"
-        aria-label="Mobile navigation"
-        aria-hidden="true"
-    >
-        <a href="index.html" class="csae-header__mobile-link">Home</a>
-        <a href="about.html" class="csae-header__mobile-link">About</a>
-        <a href="solar.html" class="csae-header__mobile-link">Solar</a>
-        <a href="contact.html" class="csae-header__mobile-link">Contact</a>
+    <!-- Drawer overlay -->
+    <div class="csae-drawer__overlay" id="csae-drawer-overlay" aria-hidden="true"></div>
 
-        <!-- Residential accordion -->
-        <button
-            class="csae-header__mobile-accordion"
-            aria-expanded="false"
-            aria-controls="csae-acc-residential"
-        >
-            Residential
-            <svg class="csae-header__mobile-accordion__chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <div class="csae-header__mobile-accordion-panel" id="csae-acc-residential" aria-hidden="true">
-            <a href="residential.html" class="csae-header__mobile-acc-all">All Residential Services &rarr;</a>
-            <a href="house-rewiring.html" class="csae-header__mobile-sub-link">House Rewiring</a>
-            <a href="new-build-electrical.html" class="csae-header__mobile-sub-link">New Build Electrical</a>
-            <a href="fuse-board-upgrades.html" class="csae-header__mobile-sub-link">Fuse Board Upgrades</a>
-            <a href="lighting-installation.html" class="csae-header__mobile-sub-link">Lighting Installation</a>
-            <a href="ev-charger-installation.html" class="csae-header__mobile-sub-link">EV Charger Installation</a>
-            <a href="electrical-safety-inspections.html" class="csae-header__mobile-sub-link">Electrical Safety Inspections</a>
-            <a href="socket-switch-installation.html" class="csae-header__mobile-sub-link">Socket &amp; Switch Installation</a>
-            <a href="electric-shower-installation.html" class="csae-header__mobile-sub-link">Electric Shower Installation</a>
-            <a href="kitchen-appliance-wiring.html" class="csae-header__mobile-sub-link">Kitchen Appliance Wiring</a>
-            <a href="smoke-carbon-monoxide-alarms.html" class="csae-header__mobile-sub-link">Smoke &amp; CO Alarms</a>
-            <a href="outdoor-garden-lighting.html" class="csae-header__mobile-sub-link">Outdoor &amp; Garden Lighting</a>
-            <a href="emergency-electrical-repairs.html" class="csae-header__mobile-sub-link">Emergency Electrical Repairs</a>
+    <!-- Side drawer -->
+    <nav class="csae-drawer" id="csae-mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+
+        <div class="csae-drawer__head">
+            <a href="index.html" aria-label="Cork Solar &amp; Electrical — Home">
+                <img src="assets/csae-logo-2.png" alt="Cork Solar &amp; Electrical" class="csae-drawer__logo-img" width="90" height="90">
+            </a>
+            <button class="csae-drawer__close" id="csae-drawer-close" aria-label="Close navigation menu">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
         </div>
 
-        <!-- Commercial accordion -->
-        <button
-            class="csae-header__mobile-accordion"
-            aria-expanded="false"
-            aria-controls="csae-acc-commercial"
-        >
-            Commercial
-            <svg class="csae-header__mobile-accordion__chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <div class="csae-header__mobile-accordion-panel" id="csae-acc-commercial" aria-hidden="true">
-            <a href="commercial.html" class="csae-header__mobile-acc-all">All Commercial Services &rarr;</a>
-            <a href="commercial-electrical-installation.html" class="csae-header__mobile-sub-link">Commercial Electrical Installation</a>
-            <a href="security-systems-access-control.html" class="csae-header__mobile-sub-link">Security Systems &amp; Access Control</a>
-            <a href="generator-backup-systems.html" class="csae-header__mobile-sub-link">Generator &amp; Backup Systems</a>
-            <a href="energy-efficiency-auditing.html" class="csae-header__mobile-sub-link">Energy Efficiency Auditing</a>
-            <a href="factory-plant-wiring.html" class="csae-header__mobile-sub-link">Factory &amp; Plant Wiring</a>
-            <a href="machinery-installations.html" class="csae-header__mobile-sub-link">Machinery Installations</a>
-            <a href="industrial-lighting.html" class="csae-header__mobile-sub-link">Industrial Lighting</a>
-            <a href="office-retail-fitouts.html" class="csae-header__mobile-sub-link">Office &amp; Retail Fitouts</a>
-            <a href="emergency-lighting.html" class="csae-header__mobile-sub-link">Emergency Lighting</a>
-            <a href="electrical-maintenance-contracts.html" class="csae-header__mobile-sub-link">Electrical Maintenance Contracts</a>
-            <a href="data-network-cabling.html" class="csae-header__mobile-sub-link">Data &amp; Network Cabling</a>
-            <a href="commercial-fuse-board-upgrades.html" class="csae-header__mobile-sub-link">Commercial Fuse Board Upgrades</a>
-            <a href="led-lighting-upgrades.html" class="csae-header__mobile-sub-link">LED Lighting Upgrades</a>
-            <a href="periodic-electrical-inspections.html" class="csae-header__mobile-sub-link">Periodic Electrical Inspections</a>
+        <div class="csae-drawer__body">
+
+            <!-- Residential accordion -->
+            <button class="csae-drawer__accordion" aria-expanded="false" aria-controls="csae-acc-residential">
+                Residential
+                <svg class="csae-drawer__chevron" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="csae-drawer__accordion-panel" id="csae-acc-residential" aria-hidden="true">
+                <a href="residential.html" class="csae-drawer__all-link">All Residential Services &rarr;</a>
+                <a href="house-rewiring.html" class="csae-drawer__sub-link">House Rewiring</a>
+                <a href="new-build-electrical.html" class="csae-drawer__sub-link">New Build Electrical</a>
+                <a href="fuse-board-upgrades.html" class="csae-drawer__sub-link">Fuse Board Upgrades</a>
+                <a href="lighting-installation.html" class="csae-drawer__sub-link">Lighting Installation</a>
+                <a href="ev-charger-installation.html" class="csae-drawer__sub-link">EV Charger Installation</a>
+                <a href="electrical-safety-inspections.html" class="csae-drawer__sub-link">Electrical Safety Inspections</a>
+                <a href="socket-switch-installation.html" class="csae-drawer__sub-link">Socket &amp; Switch Installation</a>
+                <a href="electric-shower-installation.html" class="csae-drawer__sub-link">Electric Shower Installation</a>
+                <a href="kitchen-appliance-wiring.html" class="csae-drawer__sub-link">Kitchen Appliance Wiring</a>
+                <a href="smoke-carbon-monoxide-alarms.html" class="csae-drawer__sub-link">Smoke &amp; CO Alarms</a>
+                <a href="outdoor-garden-lighting.html" class="csae-drawer__sub-link">Outdoor &amp; Garden Lighting</a>
+                <a href="emergency-electrical-repairs.html" class="csae-drawer__sub-link">Emergency Electrical Repairs</a>
+            </div>
+
+            <!-- Commercial accordion -->
+            <button class="csae-drawer__accordion" aria-expanded="false" aria-controls="csae-acc-commercial">
+                Commercial
+                <svg class="csae-drawer__chevron" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="csae-drawer__accordion-panel" id="csae-acc-commercial" aria-hidden="true">
+                <a href="commercial.html" class="csae-drawer__all-link">All Commercial Services &rarr;</a>
+                <a href="commercial-electrical-installation.html" class="csae-drawer__sub-link">Commercial Electrical Installation</a>
+                <a href="security-systems-access-control.html" class="csae-drawer__sub-link">Security Systems &amp; Access Control</a>
+                <a href="generator-backup-systems.html" class="csae-drawer__sub-link">Generator &amp; Backup Systems</a>
+                <a href="energy-efficiency-auditing.html" class="csae-drawer__sub-link">Energy Efficiency Auditing</a>
+                <a href="factory-plant-wiring.html" class="csae-drawer__sub-link">Factory &amp; Plant Wiring</a>
+                <a href="machinery-installations.html" class="csae-drawer__sub-link">Machinery Installations</a>
+                <a href="industrial-lighting.html" class="csae-drawer__sub-link">Industrial Lighting</a>
+                <a href="office-retail-fitouts.html" class="csae-drawer__sub-link">Office &amp; Retail Fitouts</a>
+                <a href="emergency-lighting.html" class="csae-drawer__sub-link">Emergency Lighting</a>
+                <a href="electrical-maintenance-contracts.html" class="csae-drawer__sub-link">Electrical Maintenance Contracts</a>
+                <a href="data-network-cabling.html" class="csae-drawer__sub-link">Data &amp; Network Cabling</a>
+                <a href="commercial-fuse-board-upgrades.html" class="csae-drawer__sub-link">Commercial Fuse Board Upgrades</a>
+                <a href="led-lighting-upgrades.html" class="csae-drawer__sub-link">LED Lighting Upgrades</a>
+                <a href="periodic-electrical-inspections.html" class="csae-drawer__sub-link">Periodic Electrical Inspections</a>
+            </div>
+
+            <a href="solar.html" class="csae-drawer__link">Solar</a>
+            <a href="about.html" class="csae-drawer__link">About</a>
+            <a href="contact.html" class="csae-drawer__link">Contact</a>
         </div>
 
-        <!-- Mobile CTA -->
-        <div style="padding: 20px 24px; border-top: 1px solid rgba(109,197,53,0.2);">
-            <a href="contact.html" class="csae-header__mobile-cta-btn">Get a Free Quote</a>
+        <div class="csae-drawer__foot">
+            <a href="contact.html" class="csae-drawer__cta">Get a Free Quote</a>
         </div>
-
-
 
     </nav><!-- /#csae-mobile-nav -->
 
@@ -677,72 +720,53 @@
 
 <script>
     /* ================================================
-       CSAE Header — Hamburger Toggle
+       CSAE Header — Side Drawer
        Copy this script into each page's closing </body>
     ================================================ */
     (function () {
         'use strict';
-
         var btn = document.getElementById('csae-hamburger-btn');
-        var nav = document.getElementById('csae-mobile-nav');
-        var header = document.getElementById('csae-header');
+        var drawer = document.getElementById('csae-mobile-nav');
+        var overlay = document.getElementById('csae-drawer-overlay');
+        var closeBtn = document.getElementById('csae-drawer-close');
+        if (!btn || !drawer) return;
 
-        if (!btn || !nav) return;
-
-        function openMenu() {
+        function openDrawer() {
             btn.setAttribute('aria-expanded', 'true');
             btn.setAttribute('aria-label', 'Close navigation menu');
-            nav.setAttribute('aria-hidden', 'false');
+            drawer.classList.add('csae-drawer--open');
+            drawer.setAttribute('aria-hidden', 'false');
+            if (overlay) { overlay.classList.add('csae-drawer--visible'); overlay.setAttribute('aria-hidden', 'false'); }
+            document.body.style.overflow = 'hidden';
         }
 
-        function closeMenu() {
+        function closeDrawer() {
             btn.setAttribute('aria-expanded', 'false');
             btn.setAttribute('aria-label', 'Open navigation menu');
-            nav.setAttribute('aria-hidden', 'true');
+            drawer.classList.remove('csae-drawer--open');
+            drawer.setAttribute('aria-hidden', 'true');
+            if (overlay) { overlay.classList.remove('csae-drawer--visible'); overlay.setAttribute('aria-hidden', 'true'); }
+            document.body.style.overflow = '';
         }
 
         btn.addEventListener('click', function () {
-            var isOpen = btn.getAttribute('aria-expanded') === 'true';
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
+            btn.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
         });
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if (overlay) overlay.addEventListener('click', closeDrawer);
 
-        // Mobile accordion — Residential & Commercial
-        var accordions = document.querySelectorAll('.csae-header__mobile-accordion');
-        accordions.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var panelId = btn.getAttribute('aria-controls');
-                var panel = document.getElementById(panelId);
-                var isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-                if (isOpen) {
-                    btn.setAttribute('aria-expanded', 'false');
-                    panel.setAttribute('aria-hidden', 'true');
-                    panel.classList.remove('csae-acc-open');
-                } else {
-                    btn.setAttribute('aria-expanded', 'true');
-                    panel.setAttribute('aria-hidden', 'false');
-                    panel.classList.add('csae-acc-open');
-                }
-            });
-        });
-
-        // Close when clicking outside the header
-        document.addEventListener('click', function (e) {
-            if (header && !header.contains(e.target)) {
-                closeMenu();
-            }
-        });
-
-        // Close on Escape key
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeMenu();
-                btn.focus();
-            }
+            if (e.key === 'Escape') { closeDrawer(); btn.focus(); }
+        });
+
+        document.querySelectorAll('.csae-drawer__accordion').forEach(function (accBtn) {
+            accBtn.addEventListener('click', function () {
+                var panel = document.getElementById(accBtn.getAttribute('aria-controls'));
+                var open = accBtn.getAttribute('aria-expanded') === 'true';
+                accBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+                panel.setAttribute('aria-hidden', open ? 'true' : 'false');
+                panel.classList.toggle('csae-acc-open', !open);
+            });
         });
     }());
 </script>
