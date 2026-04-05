@@ -121,9 +121,11 @@
         .csae-footer__logo-img { max-height: 80px; width: auto; display: block; object-fit: contain; }
         .csae-footer__bio { margin-top: 16px; font-size: 13px; color: #a8bfd4; line-height: 1.7; max-width: 220px; }
         .csae-footer__social { display: flex; gap: 10px; margin-top: 16px; }
-        .csae-footer__social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
-        .csae-footer__social-link:hover { background: #6DC535; border-color: #6DC535; }
+        .csae-footer__social-link { width: 36px; height: 36px; background: #000000; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: border-color 0.2s; }
+        .csae-footer__social-link:hover { border-color: #6DC535; }
         .csae-footer__social-link svg { width: 16px; height: 16px; fill: #ffffff; }
+        .csae-footer__social-link img { width: 20px; height: 20px; display: block; transition: filter 0.2s; }
+        .csae-footer__social-link:hover img { filter: brightness(0) saturate(100%) invert(46%) sepia(98%) saturate(397%) hue-rotate(71deg) brightness(101%); }
         .csae-footer__col-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6DC535; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(109,197,53,0.25); }
         .csae-footer__links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
         .csae-footer__link { display: block; color: #a8bfd4; text-decoration: none; font-size: 0.875rem; line-height: 1.4; transition: color 0.2s, padding-left 0.15s; }
@@ -144,7 +146,7 @@
         .csae-footer__bottom-link:hover { color: #6DC535; }
         @media (max-width: 1024px) { .csae-footer__main { grid-template-columns: 1fr 1fr; gap: 36px; } .csae-footer__logo-col { grid-column: 1 / -1; } }
         @media (max-width: 640px) { .csae-footer__main { grid-template-columns: 1fr; gap: 32px; padding: 40px 18px 36px; } .csae-footer__bottom-inner { flex-direction: column; align-items: center; padding: 16px 18px; } }
-        @media (max-width: 480px) { .csae-footer__main { gap: 36px; padding: 40px 16px 36px; } .csae-footer__social { gap: 12px; margin-top: 20px; } .csae-footer__social-link { width: 44px; height: 44px; } .csae-footer__social-link svg { width: 20px; height: 20px; } .csae-footer__bottom-inner { flex-direction: column; align-items: center; padding: 16px; gap: 8px; } .csae-footer__bottom-links { gap: 16px; } }
+        @media (max-width: 480px) { .csae-footer__main { gap: 36px; padding: 40px 16px 36px; } .csae-footer__social { gap: 12px; margin-top: 20px; } .csae-footer__social-link { width: 36px; height: 36px; } .csae-footer__social-link img { width: 20px; height: 20px; } .csae-footer__bottom-inner { flex-direction: column; align-items: center; padding: 16px; gap: 8px; } .csae-footer__bottom-links { gap: 16px; } }
 
         /* =====================================================
            PAGE LAYOUT
@@ -742,8 +744,12 @@
                 </a>
                 <p class="csae-footer__bio">Cork Solar &amp; Electrical are SEAI approved electricians serving Cork City and County. Specialists in residential and commercial electrical installations and solar energy systems.</p>
                 <div class="csae-footer__social">
-                    <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                    <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Instagram"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#ffffff" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="#ffffff" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/></svg></a>
+                    <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Facebook">
+                        <img src="assets/icons/facebook.svg" alt="" width="20" height="20" aria-hidden="true">
+                    </a>
+                    <a href="#" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Instagram">
+                        <img src="assets/icons/instagram.svg" alt="" width="20" height="20" aria-hidden="true">
+                    </a>
                 </div>
             </div>
             <div>
