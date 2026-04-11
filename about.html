@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <title>About Us | Cork Solar &amp; Electrical | Local Cork Electricians</title>
-    <meta name="description" content="Learn about Cork Solar &amp; Electrical — a Cork-based electrical contractor with a team of 7, serving Cork City and County Cork. SEAI approved, fully insured, built on word of mouth.">
+    <title>About Us | Cork Electrical Company | Cork Solar &amp; Electrical</title>
+    <meta name="description" content="RECI registered Cork electrical company with 10 years' experience. Serving Cork City &amp; County. Residential, commercial &amp; solar specialists. Call for a free quote today.">
     <link rel="canonical" href="https://corksolarandelectrical.ie/about.html">
 
     <!-- Open Graph -->
@@ -215,6 +215,9 @@
         .csae-hero h1 span { color: #6DC535; }
         .csae-hero__sub { font-size: 1.0625rem; color: rgba(255,255,255,0.8); line-height: 1.65; max-width: 520px; margin-bottom: 32px; }
         .csae-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+        .csae-hero__badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+        .csae-hero__badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.08); border: 1px solid rgba(109,197,53,0.4); color: rgba(255,255,255,0.9); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; padding: 6px 14px; }
+        .csae-hero__badge svg { width: 14px; height: 14px; stroke: #6DC535; stroke-width: 2.5; fill: none; flex-shrink: 0; }
 
         /* =====================================================
            2. OUR STORY
@@ -248,10 +251,11 @@
 
         .csae-stats { background: #111111; border-top: 1px solid rgba(109,197,53,0.2); border-bottom: 1px solid rgba(109,197,53,0.2); padding: 0; }
         .csae-stats__grid { max-width: 1320px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(4, 1fr); }
-        .csae-stats__item { padding: 52px 28px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+        .csae-stats__item { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
         .csae-stats__item:last-child { border-right: none; }
-        .csae-stats__number { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.6rem, 2.2rem + 1vw, 3.2rem); color: #6DC535; line-height: 1; display: inline-block; padding-bottom: 10px; border-bottom: 3px solid rgba(109,197,53,0.4); margin-bottom: 14px; }
-        .csae-stats__label { font-size: 0.9375rem; color: #a8bfd4; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.75rem; }
+        .csae-stats__icon { display: block; margin: 0 auto 10px; }
+        .csae-stats__number { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem); color: #6DC535; line-height: 1; margin-bottom: 6px; }
+        .csae-stats__label { font-size: 0.875rem; color: #a8bfd4; font-weight: 500; letter-spacing: 0.02em; }
 
         /* =====================================================
            4. WHY CHOOSE US
@@ -397,6 +401,53 @@
             .csae-cta-strip__btns .csae-btn { width: 100%; max-width: 320px; text-align: center; }
         }
     </style>
+
+    <!-- Schema: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ElectricalContractor",
+        "name": "Cork Solar & Electrical",
+        "url": "https://corksolarandelectrical.ie",
+        "logo": "https://corksolarandelectrical.ie/assets/csae-logo-2.png",
+        "telephone": "+353852168789",
+        "email": "corksolarandelectrical@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Railway Cottage, Ballinamona, Mourneabbey",
+            "addressLocality": "Mallow",
+            "addressRegion": "Cork",
+            "postalCode": "P51RR22",
+            "addressCountry": "IE"
+        },
+        "areaServed": ["Cork City", "Mallow", "County Cork"],
+        "description": "RECI registered and SEAI approved electrical contractors serving residential and commercial clients across Cork City and County Cork.",
+        "openingHours": ["Mo-Fr 08:00-18:00"],
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Schema: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://corksolarandelectrical.ie/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://corksolarandelectrical.ie/about.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
 <div class="csae-page">
@@ -420,12 +471,13 @@
                             <li class="csae-header__dropdown-item"><a href="fuse-board-upgrades.html" class="csae-header__dropdown-link">Fuse Board Upgrades</a></li>
                             <li class="csae-header__dropdown-item"><a href="lighting-installation.html" class="csae-header__dropdown-link">Lighting Installation</a></li>
                             <li class="csae-header__dropdown-item"><a href="ev-charger-installation.html" class="csae-header__dropdown-link">EV Charger Installation</a></li>
-                            <li class="csae-header__dropdown-item"><a href="electrical-safety-inspections.html" class="csae-header__dropdown-link">Electrical Safety Inspections</a></li>
+                            <li class="csae-header__dropdown-item"><a href="electrical-safety-inspections.html" class="csae-header__dropdown-link">Periodic Inspection Report (PIR)</a></li>
                             <li class="csae-header__dropdown-item"><a href="socket-switch-installation.html" class="csae-header__dropdown-link">Socket &amp; Switch Installation</a></li>
                             <li class="csae-header__dropdown-item"><a href="electric-shower-installation.html" class="csae-header__dropdown-link">Electric Shower Installation</a></li>
                             <li class="csae-header__dropdown-item"><a href="smoke-carbon-monoxide-alarms.html" class="csae-header__dropdown-link">Smoke &amp; CO Alarms</a></li>
                             <li class="csae-header__dropdown-item"><a href="outdoor-garden-lighting.html" class="csae-header__dropdown-link">Outdoor &amp; Garden Lighting</a></li>
                             <li class="csae-header__dropdown-item"><a href="emergency-electrical-repairs.html" class="csae-header__dropdown-link">Emergency Electrical Repairs</a></li>
+                            <li class="csae-header__dropdown-item"><a href="residential-electrical-consultancy.html" class="csae-header__dropdown-link">Electrical Consultancy</a></li>
                         </ul>
                     </li>
                     <li class="csae-header__nav-item">
@@ -441,7 +493,8 @@
                             <li class="csae-header__dropdown-item"><a href="data-network-cabling.html" class="csae-header__dropdown-link">Data &amp; Network Cabling</a></li>
                             <li class="csae-header__dropdown-item"><a href="commercial-fuse-board-upgrades.html" class="csae-header__dropdown-link">Commercial Fuse Board Upgrades</a></li>
                             <li class="csae-header__dropdown-item"><a href="led-lighting-upgrades.html" class="csae-header__dropdown-link">LED Lighting Upgrades</a></li>
-                            <li class="csae-header__dropdown-item"><a href="periodic-electrical-inspections.html" class="csae-header__dropdown-link">Periodic Electrical Inspections</a></li>
+                            <li class="csae-header__dropdown-item"><a href="periodic-electrical-inspections.html" class="csae-header__dropdown-link">Periodic Inspection Report (PIR)</a></li>
+                            <li class="csae-header__dropdown-item"><a href="commercial-electrical-consultancy.html" class="csae-header__dropdown-link">Electrical Consultancy</a></li>
                         </ul>
                     </li>
                     <li class="csae-header__nav-item"><a href="solar.html" class="csae-header__nav-link">Solar</a></li>
@@ -483,12 +536,13 @@
                     <a href="fuse-board-upgrades.html" class="csae-drawer__sub-link">Fuse Board Upgrades</a>
                     <a href="lighting-installation.html" class="csae-drawer__sub-link">Lighting Installation</a>
                     <a href="ev-charger-installation.html" class="csae-drawer__sub-link">EV Charger Installation</a>
-                    <a href="electrical-safety-inspections.html" class="csae-drawer__sub-link">Electrical Safety Inspections</a>
+                    <a href="electrical-safety-inspections.html" class="csae-drawer__sub-link">Periodic Inspection Report (PIR)</a>
                     <a href="socket-switch-installation.html" class="csae-drawer__sub-link">Socket &amp; Switch Installation</a>
                     <a href="electric-shower-installation.html" class="csae-drawer__sub-link">Electric Shower Installation</a>
                     <a href="smoke-carbon-monoxide-alarms.html" class="csae-drawer__sub-link">Smoke &amp; CO Alarms</a>
                     <a href="outdoor-garden-lighting.html" class="csae-drawer__sub-link">Outdoor &amp; Garden Lighting</a>
                     <a href="emergency-electrical-repairs.html" class="csae-drawer__sub-link">Emergency Electrical Repairs</a>
+                    <a href="residential-electrical-consultancy.html" class="csae-drawer__sub-link">Electrical Consultancy</a>
                 </div>
                 <button class="csae-drawer__accordion" aria-expanded="false" aria-controls="csae-acc-commercial">
                     Commercial
@@ -505,7 +559,8 @@
                     <a href="data-network-cabling.html" class="csae-drawer__sub-link">Data &amp; Network Cabling</a>
                     <a href="commercial-fuse-board-upgrades.html" class="csae-drawer__sub-link">Commercial Fuse Board Upgrades</a>
                     <a href="led-lighting-upgrades.html" class="csae-drawer__sub-link">LED Lighting Upgrades</a>
-                    <a href="periodic-electrical-inspections.html" class="csae-drawer__sub-link">Periodic Electrical Inspections</a>
+                    <a href="periodic-electrical-inspections.html" class="csae-drawer__sub-link">Periodic Inspection Report (PIR)</a>
+                    <a href="commercial-electrical-consultancy.html" class="csae-drawer__sub-link">Electrical Consultancy</a>
                 </div>
                 <a href="solar.html" class="csae-drawer__link">Solar</a>
                 <a href="about.html" class="csae-drawer__link csae-active">About</a>
@@ -526,12 +581,52 @@
             <div class="csae-hero__bg" aria-hidden="true"></div>
             <div class="csae-hero__overlay" aria-hidden="true"></div>
             <div class="csae-hero__content">
-                <h1>About <span>Cork Solar &amp; Electrical</span></h1>
-                <p class="csae-hero__sub">A local Cork electrical contractor built on quality workmanship, honest pricing and reliable service across Cork City and County.</p>
+                <h1>About <span style="color:#6DC535;">Cork Solar &amp; Electrical</span></h1>
+                <p class="csae-hero__sub">Cork's trusted electrical contractors — residential, commercial and solar</p>
+                <div class="csae-hero__badges">
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        SEAI Approved
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Safe Electric Registered
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Fully Insured
+                    </span>
+                </div>
             </div>
         </section>
 
-        <!-- ===== 2. OUR STORY ===== -->
+        <!-- ===== 2. STATS BAR ===== -->
+        <section class="csae-stats" aria-label="Company stats">
+            <div class="csae-stats__grid">
+                <div class="csae-stats__item">
+                    <img src="assets/icons/icon-trophy.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">10</div>
+                    <div class="csae-stats__label">Years of Experience</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="assets/icons/icon-checklist.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">1000+</div>
+                    <div class="csae-stats__label">Jobs Completed</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="assets/icons/icon-thumbsup.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">Same Day</div>
+                    <div class="csae-stats__label">Response</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="assets/icons/icon-shield.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">SEAI</div>
+                    <div class="csae-stats__label">Approved Installer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. OUR STORY ===== -->
         <section class="csae-section csae-section--light" id="our-story" aria-labelledby="story-heading">
             <div class="csae-container">
                 <div class="csae-story__grid">
@@ -541,33 +636,11 @@
                     <div class="csae-story__text">
                         <span class="csae-section-label">Our Story</span>
                         <h2 class="csae-section-title" id="story-heading">Who We Are</h2>
-                        <p class="csae-story__body">Cork Solar &amp; Electrical is a Cork-based electrical contractor serving homeowners and businesses across Cork City and County Cork. Founded by David O'Leary, the company has been trading for 3 years and has grown to a team of 7 — including 6 qualified electricians and office administrator Marion.</p>
-                        <p class="csae-story__body">We cover the full range of residential and commercial electrical services — from house rewires and fuse board upgrades to office fit-outs, solar installations and emergency callouts. We are SEAI approved, Safe Electric registered and fully insured on every job.</p>
-                        <p class="csae-story__body">Our reputation has been built almost entirely on word of mouth and referrals. That says everything about how we approach our work — with care, professionalism and honest pricing on every job, no matter how big or small.</p>
-                        <p class="csae-story__body">[PLACEHOLDER: Add David's full personal story and background when provided]</p>
+                        <p class="csae-story__body">Cork Solar &amp; Electrical was founded by David O'Leary with one goal in mind — to provide honest, reliable electrical work that Cork homeowners and businesses could actually depend on. What started as a one-man operation has grown over 10 years into a trusted local team of 10, including 6 fully qualified electricians and office administrator Marion, who keeps everything running smoothly behind the scenes.</p>
+                        <p class="csae-story__body">From the beginning, David built the business the old-fashioned way — by doing the job right, being straight with customers on price, and showing up when he said he would. The vast majority of our work still comes through word of mouth and referrals. That's not something we take for granted.</p>
+                        <p class="csae-story__body">We're a Cork company, through and through. Based in Mallow and covering Cork City and County, we work across the full range of <a href="residential.html">residential electrical services</a> and <a href="commercial.html">commercial electrical services</a> — from <a href="house-rewiring.html">house rewires</a> and fuse board upgrades to office fit-outs, solar panel installations and emergency callouts.</p>
+                        <p class="csae-story__body">We are SEAI approved, Safe Electric registered, RECI certified and fully insured on every job. Whether it's a single socket or a full commercial fit-out, every job gets the same standard of care and workmanship.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 3. STATS BAR ===== -->
-        <section class="csae-stats" aria-label="Company stats">
-            <div class="csae-stats__grid">
-                <div class="csae-stats__item">
-                    <div class="csae-stats__number">3</div>
-                    <div class="csae-stats__label">Years Trading</div>
-                </div>
-                <div class="csae-stats__item">
-                    <div class="csae-stats__number">7</div>
-                    <div class="csae-stats__label">Team Members</div>
-                </div>
-                <div class="csae-stats__item">
-                    <div class="csae-stats__number">500+</div>
-                    <div class="csae-stats__label">Jobs Completed</div>
-                </div>
-                <div class="csae-stats__item">
-                    <div class="csae-stats__number">SEAI</div>
-                    <div class="csae-stats__label">Approved Installer</div>
                 </div>
             </div>
         </section>
