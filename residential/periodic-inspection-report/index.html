@@ -850,5 +850,109 @@
     }());
 </script>
 
+
+<!-- GDPR Cookie Banner -->
+<div id="csae-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="csae-cookie__inner">
+        <p class="csae-cookie__text">We use cookies to improve your experience on our website. By continuing to browse, you accept our use of cookies.</p>
+        <div class="csae-cookie__actions">
+            <button id="csae-cookie-accept" class="csae-cookie__btn-accept">Accept All</button>
+            <a href="/privacy-policy/" class="csae-cookie__btn-learn">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    #csae-cookie-banner {
+        display: none;
+        position: fixed;
+        bottom: 0; left: 0;
+        width: 100%;
+        z-index: 99999;
+        background: #1a1a1a;
+        border-top: 2px solid #6DC535;
+        padding: 18px 28px;
+        box-sizing: border-box;
+    }
+    .csae-cookie__inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+    .csae-cookie__text {
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+        flex: 1;
+        min-width: 200px;
+    }
+    .csae-cookie__actions {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+    }
+    .csae-cookie__btn-accept {
+        background: #6DC535;
+        color: #111111;
+        border: 2px solid #6DC535;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 11px 24px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+    }
+    .csae-cookie__btn-accept:hover { background: transparent; color: #6DC535; }
+    .csae-cookie__btn-learn {
+        display: inline-block;
+        background: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 11px 24px;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+    .csae-cookie__btn-learn:hover { background: #ffffff; color: #111111; }
+    @media (max-width: 600px) {
+        #csae-cookie-banner { padding: 16px 20px; }
+        .csae-cookie__inner { gap: 16px; }
+        .csae-cookie__actions { width: 100%; }
+        .csae-cookie__btn-accept, .csae-cookie__btn-learn { flex: 1; text-align: center; }
+    }
+</style>
+
+<script>
+    /* Cookie consent banner */
+    (function () {
+        var banner = document.getElementById('csae-cookie-banner');
+        if (!banner) return;
+        function getCookie(name) {
+            var v = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return v ? v.pop() : '';
+        }
+        if (getCookie('csae_cookie_consent') === 'accepted') return;
+        banner.style.display = 'block';
+        document.getElementById('csae-cookie-accept').addEventListener('click', function () {
+            var d = new Date();
+            d.setFullYear(d.getFullYear() + 1);
+            document.cookie = 'csae_cookie_consent=accepted; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+            banner.style.display = 'none';
+        });
+    }());
+</script>
 </body>
 </html>
