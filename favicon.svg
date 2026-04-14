@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Navy background square -->
+  <rect width="64" height="64" fill="#1B2A4A"/>
+  <!-- Green lightning bolt centred in square -->
+  <!-- Bolt: top point ~(36,8), drops to mid-right (42,28), steps left to (34,28), drops to bottom (28,56), rises to mid-left (22,36), steps right to (30,36), closes -->
+  <polygon
+    points="36,8 44,30 34,30 30,56 20,34 30,34"
+    fill="#6DC535"
+  />
+</svg>
