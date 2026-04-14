@@ -55,8 +55,8 @@ Building a full multi-page website for Cork Solar & Electrical (CSAE), a residen
 - periodic-electrical-inspections.html
 
 ## Contact Details
-- Phone: 0852168789
-- Email: corksolarandelectrical@gmail.com
+- Phone: 0857188103
+- Email: info@csae.ie
 - Address: Cork Solar and Electrical, Railway Cottage, Ballinamona, Mourneabbey, Mallow, P51RR22
 - Domain: corksolarandelectrical.ie
 
