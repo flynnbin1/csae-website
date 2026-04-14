@@ -1,0 +1,930 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>About Us | Cork Electrical Company | Cork Solar &amp; Electrical</title>
+    <meta name="description" content="RECI registered Cork electrical company with 10 years' experience. Serving Cork City &amp; County. Residential, commercial &amp; solar specialists. Call for a free quote today.">
+    <link rel="canonical" href="https://www.csae.ie/about/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Cork Solar &amp; Electrical">
+    <meta property="og:description" content="A Cork-based electrical contractor built on quality workmanship, honest pricing and reliable service across Cork City and County.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.csae.ie/about/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           CSAE GLOBAL + HEADER + PAGE STYLES
+        ===================================================== */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: #111111; background: #ffffff; line-height: 1.6; }
+        img { max-width: 100%; display: block; }
+
+        /* =====================================================
+           HEADER COMPONENT STYLES
+        ===================================================== */
+
+        .csae-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: #111111; border-bottom: 1px solid #6DC535; font-family: 'Inter', sans-serif; }
+        .csae-header__inner { max-width: 1320px; margin: 0 auto; padding: 0 28px; height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .csae-header__logo { flex-shrink: 0; text-decoration: none; display: flex; align-items: center; gap: 13px; }
+        .csae-header__logo-mark { width: auto; height: auto; max-height: 90px; flex-shrink: 0; display: block; object-fit: contain; }
+        .csae-header__inner nav { align-self: stretch; display: flex; align-items: stretch; } .csae-header__nav { display: flex; align-items: stretch; align-self: stretch; list-style: none; gap: 2px; }
+        .csae-header__nav-item { position: relative; display: flex; align-items: center; }
+        .csae-header__nav-item::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 8px; }
+        .csae-header__nav-link { display: flex; align-items: center; gap: 6px; padding: 10px 15px; color: #ffffff; text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; transition: color 0.2s; line-height: 1; }
+        .csae-header__nav-link:hover, .csae-header__nav-link.csae-active { color: #6DC535; }
+        .csae-header__nav-link[aria-haspopup]::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; transition: transform 0.2s; flex-shrink: 0; }
+        .csae-header__nav-item:hover .csae-header__nav-link[aria-haspopup]::after { transform: rotate(180deg); }
+        .csae-header__dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 0; background: #111111; border: 1px solid rgba(109,197,53,0.2); border-top: 3px solid #6DC535; min-width: 270px; list-style: none; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.18s ease, visibility 0.18s ease; box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+        .csae-header__nav-item:hover .csae-header__dropdown { opacity: 1; visibility: visible; pointer-events: all; }
+        .csae-header__dropdown-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .csae-header__dropdown-item:last-child { border-bottom: none; }
+        .csae-header__dropdown-link { display: block; padding: 10px 18px; color: #ffffff; text-decoration: none; font-size: 0.875rem; font-weight: 400; transition: background 0.15s, color 0.15s, padding-left 0.15s; }
+        .csae-header__dropdown-link:hover { background: rgba(109,197,53,0.1); color: #6DC535; padding-left: 24px; }
+        .csae-header__dropdown-all { display: block; padding: 11px 18px; color: #6DC535; text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid rgba(109,197,53,0.2); background: rgba(109,197,53,0.06); transition: background 0.15s; }
+        .csae-header__dropdown-all:hover { background: rgba(109,197,53,0.15); }
+        .csae-header__actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+        .csae-header__cta { display: inline-block; background: #6DC535; color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 700; padding: 12px 24px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #6DC535; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+        .csae-header__cta:hover { background: transparent; color: #6DC535; }
+        .csae-header__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 5px; cursor: pointer; background: none; border: none; flex-shrink: 0; }
+        .csae-header__hamburger span { display: block; width: 100%; height: 2px; background: #ffffff; transition: transform 0.3s ease, opacity 0.3s ease; transform-origin: center; }
+        .csae-header__hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .csae-header__hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .csae-header__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ---- Side Drawer ---- */
+        .csae-drawer__overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9997; opacity: 0; visibility: hidden; transition: opacity 0.32s ease, visibility 0.32s ease; cursor: pointer; }
+        .csae-drawer__overlay.csae-drawer--visible { opacity: 1; visibility: visible; }
+        .csae-drawer { position: fixed; top: 0; right: 0; height: 100dvh; width: 82%; max-width: 340px; background: #111111; border-left: 1px solid rgba(109,197,53,0.2); z-index: 9998; transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; overflow: hidden; }
+        .csae-drawer.csae-drawer--open { transform: translateX(0); }
+        .csae-drawer__head { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
+        .csae-drawer__logo-img { max-height: 90px; width: auto; display: block; object-fit: contain; }
+        .csae-drawer__close { width: 36px; height: 36px; background: none; border: 1px solid rgba(255,255,255,0.15); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.2s, color 0.2s; }
+        .csae-drawer__close:hover { border-color: #6DC535; color: #6DC535; }
+        .csae-drawer__close svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+        .csae-drawer__body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+        .csae-drawer__link { display: block; padding: 16px 24px; color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+        .csae-drawer__link:hover, .csae-drawer__link.csae-active { color: #6DC535; }
+        .csae-drawer__accordion { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px 24px; color: #ffffff; background: none; border: none; border-bottom: 1px solid rgba(255,255,255,0.06); font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; text-align: left; transition: color 0.2s, background 0.2s; }
+        .csae-drawer__accordion:hover { color: #6DC535; }
+        .csae-drawer__accordion[aria-expanded="true"] { color: #6DC535; border-bottom-color: rgba(109,197,53,0.2); background: rgba(109,197,53,0.04); }
+        .csae-drawer__chevron { width: 16px; height: 16px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s ease; }
+        .csae-drawer__accordion[aria-expanded="true"] .csae-drawer__chevron { transform: rotate(180deg); }
+        .csae-drawer__accordion-panel { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; background: rgba(0,0,0,0.2); }
+        .csae-drawer__accordion-panel.csae-acc-open { max-height: 800px; }
+        .csae-drawer__all-link { display: block; padding: 11px 24px 11px 28px; color: #6DC535; text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid rgba(109,197,53,0.15); background: rgba(109,197,53,0.06); transition: background 0.2s; }
+        .csae-drawer__all-link:hover { background: rgba(109,197,53,0.14); }
+        .csae-drawer__sub-link { display: block; padding: 11px 24px 11px 32px; color: #a8bfd4; text-decoration: none; font-size: 0.875rem; font-weight: 400; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.2s; }
+        .csae-drawer__sub-link:hover { color: #6DC535; }
+        .csae-drawer__foot { padding: 20px; border-top: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
+        .csae-drawer__cta { display: block; width: 100%; background: #6DC535; color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 700; padding: 16px 24px; text-align: center; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #6DC535; transition: background 0.2s, color 0.2s; }
+        .csae-drawer__cta:hover { background: transparent; color: #6DC535; }
+
+        @media (max-width: 1080px) {
+            .csae-header__nav { display: none; }
+            .csae-header__cta { display: none; }
+            .csae-header__hamburger { display: flex; }
+        }
+        @media (max-width: 480px) {
+            .csae-header__inner { padding: 0 16px; gap: 12px; }
+            .csae-header__logo-mark { max-height: 80px; }
+            .csae-header__hamburger { width: 44px; height: 44px; }
+            .csae-drawer__link { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-drawer__accordion { font-size: 1.0625rem; padding: 15px 20px; }
+            .csae-drawer__sub-link { padding: 11px 20px 11px 36px; font-size: 0.9375rem; }
+            .csae-drawer__cta { padding: 18px 24px; font-size: 1rem; }
+        }
+
+        /* =====================================================
+           FOOTER COMPONENT STYLES
+        ===================================================== */
+
+        .csae-footer { background: #000000 !important; color: #ffffff; font-family: 'Inter', sans-serif; border-top: 3px solid #6DC535; }
+        .csae-footer__main { max-width: 1320px; margin: 0 auto; padding: 60px 28px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 0.9fr; gap: 48px; align-items: start; }
+        .csae-footer__logo-link { display: inline-block; text-decoration: none; }
+        .csae-footer__logo-img { max-height: 80px; width: auto; display: block; object-fit: contain; }
+        .csae-footer__bio { margin-top: 16px; font-size: 13px; color: #ffffff !important; line-height: 1.7; max-width: 220px; }
+        .csae-footer__social { display: flex; gap: 10px; margin-top: 16px; }
+        .csae-footer__social-link { width: 36px; height: 36px; background: #000000 !important; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: border-color 0.2s; }
+        .csae-footer__social-link:hover { border-color: #6DC535; }
+        .csae-footer__social-link svg { width: 16px; height: 16px; fill: #ffffff; }
+        .csae-footer__social-link img { width: 20px; height: 20px; display: block; transition: filter 0.2s; }
+        .csae-footer__social-link:hover img { filter: brightness(0) saturate(100%) invert(46%) sepia(98%) saturate(397%) hue-rotate(71deg) brightness(101%) !important; }
+        .csae-footer__col-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6DC535 !important; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(109,197,53,0.25); }
+        .csae-footer__links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+        .csae-footer__link { display: block; color: #ffffff !important; text-decoration: none; font-size: 0.875rem; line-height: 1.4; transition: color 0.2s, padding-left 0.15s; }
+        .csae-footer__link:hover { color: #6DC535 !important; padding-left: 5px; }
+        .csae-footer__contact-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+        .csae-footer__contact-item { display: flex; align-items: flex-start; gap: 10px; }
+        .csae-footer__contact-icon { width: 30px; height: 30px; background: rgba(109,197,53,0.1); border: 1px solid rgba(109,197,53,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+        .csae-footer__contact-icon svg { width: 13px; height: 13px; fill: #6DC535 !important; }
+        .csae-footer__contact-text { display: flex; flex-direction: column; gap: 2px; }
+        .csae-footer__contact-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6DC535 !important; }
+        .csae-footer__contact-value { font-size: 0.875rem; color: #ffffff !important; line-height: 1.5; text-decoration: none; transition: color 0.2s; }
+        a.csae-footer__contact-value:hover { color: #6DC535 !important; }
+        .csae-footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); background: #000000 !important; }
+        .csae-footer__bottom-inner { max-width: 1320px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .csae-footer__copyright { font-size: 0.75rem; color: #ffffff !important; }
+        .csae-footer__bottom-links { list-style: none; display: flex; gap: 20px; }
+        .csae-footer__bottom-link { font-size: 0.75rem; color: #ffffff !important; text-decoration: none; transition: color 0.2s; }
+        .csae-footer__bottom-link:hover { color: #6DC535 !important; }
+
+        @media (max-width: 1024px) {
+            .csae-footer__main { grid-template-columns: 1fr 1fr; gap: 36px; }
+            .csae-footer__logo-col { grid-column: 1 / -1; }
+        }
+        @media (max-width: 640px) {
+            .csae-footer__main { grid-template-columns: 1fr; gap: 32px; padding: 40px 18px 36px; }
+            .csae-footer__bottom-inner { flex-direction: column; align-items: center; padding: 16px 18px; }
+        }
+        @media (max-width: 480px) {
+            .csae-footer__main { gap: 36px; padding: 40px 16px 36px; }
+            .csae-footer__social { gap: 12px; margin-top: 20px; }
+            .csae-footer__social-link { width: 36px; height: 36px; }
+            .csae-footer__social-link img { width: 20px; height: 20px; }
+            .csae-footer__bottom-inner { flex-direction: column; align-items: center; padding: 16px; gap: 8px; }
+            .csae-footer__bottom-links { gap: 16px; }
+        }
+
+        /* =====================================================
+           PAGE LAYOUT
+        ===================================================== */
+
+        .csae-page { padding-top: 80px; }
+
+        .csae-section { padding: 100px 0; }
+        .csae-section--dark { background: #111111; color: #ffffff; }
+        .csae-section--light { background: #F5F5F5; }
+        .csae-section--white { background: #ffffff; }
+
+        .csae-container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+
+        .csae-section-label { display: inline-block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6DC535; margin-bottom: 14px; }
+
+        .csae-section-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.5rem, 2.2rem + 1.4vw, 3.2rem); line-height: 1.12; margin-bottom: 18px; }
+
+        .csae-section-intro { font-size: 1.0625rem; line-height: 1.8; color: #5a7a99; max-width: 560px; }
+        .csae-section--dark .csae-section-intro { color: #a8bfd4; }
+
+        .csae-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 14px 32px; border: 2px solid transparent; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; white-space: nowrap; }
+        .csae-btn--green { background: #6DC535; color: #ffffff; border-color: #6DC535; }
+        .csae-btn--green:hover { background: #5aaa2a; border-color: #5aaa2a; color: #ffffff; box-shadow: 0 4px 18px rgba(109,197,53,0.35); }
+        .csae-btn--outline-white { background: transparent; color: #ffffff; border-color: #ffffff; }
+        .csae-btn--outline-white:hover { background: #ffffff; color: #111111; }
+        .csae-btn--outline-green { background: transparent; color: #6DC535; border-color: #6DC535; }
+        .csae-btn--outline-green:hover { background: #6DC535; color: #ffffff; box-shadow: 0 4px 18px rgba(109,197,53,0.3); }
+
+        /* =====================================================
+           1. HERO
+        ===================================================== */
+
+        .csae-hero {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+        .csae-hero__bg {
+            position: absolute; inset: 0;
+            background-color: #111111;
+            background-image: url('/assets/csae-res-feature.jpg.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .csae-hero__overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(105deg, rgba(17,17,17,0.96) 40%, rgba(17,17,17,0.7) 100%);
+        }
+        .csae-hero__content {
+            position: relative; z-index: 2;
+            max-width: 1320px; margin: 0 auto;
+            padding: 0 28px; width: 100%;
+        }
+        .csae-hero__label { display: inline-block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6DC535; margin-bottom: 16px; }
+        .csae-hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 2rem + 1.2vw, 3.2rem); line-height: 1.1; color: #ffffff; max-width: 700px; margin-bottom: 18px; }
+        .csae-hero h1 span { color: #6DC535; }
+        .csae-hero__sub { font-size: 1.0625rem; color: rgba(255,255,255,0.8); line-height: 1.65; max-width: 520px; margin-bottom: 32px; }
+        .csae-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+        .csae-hero__badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+        .csae-hero__badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.08); border: 1px solid rgba(109,197,53,0.4); color: rgba(255,255,255,0.9); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; padding: 6px 14px; }
+        .csae-hero__badge svg { width: 14px; height: 14px; stroke: #6DC535; stroke-width: 2.5; fill: none; flex-shrink: 0; }
+
+        /* =====================================================
+           2. OUR STORY
+        ===================================================== */
+
+        .csae-story__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 88px;
+            align-items: center;
+        }
+        .csae-story__image {
+            position: relative;
+            min-height: 460px;
+            overflow: hidden;
+            border: 10px solid #6DC535;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+        }
+        .csae-story__text .csae-section-title { color: #111111; }
+        .csae-story__body {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #4a5a6a;
+            margin-bottom: 20px;
+        }
+        .csae-story__body:last-of-type { margin-bottom: 0; }
+
+        /* =====================================================
+           3. STATS BAR
+        ===================================================== */
+
+        .csae-stats { background: #111111; border-top: 1px solid rgba(109,197,53,0.2); border-bottom: 1px solid rgba(109,197,53,0.2); padding: 0; }
+        .csae-stats__grid { max-width: 1320px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(4, 1fr); }
+        .csae-stats__item { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+        .csae-stats__item:last-child { border-right: none; }
+        .csae-stats__icon { display: block; margin: 0 auto 10px; }
+        .csae-stats__number { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem); color: #6DC535; line-height: 1; margin-bottom: 6px; }
+        .csae-stats__label { font-size: 0.875rem; color: #a8bfd4; font-weight: 500; letter-spacing: 0.02em; }
+
+        /* =====================================================
+           4. WHY CHOOSE US
+        ===================================================== */
+
+        #why-us {
+            background-image: url('/assets/csae-why-choose-us.jpg.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        #why-us::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(17,17,17,0.85);
+            pointer-events: none;
+        }
+        #why-us > * { position: relative; z-index: 1; }
+        .csae-why__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 56px;
+        }
+        .csae-why__item { text-align: center; }
+        .csae-why__icon { width: 64px; height: 64px; background: rgba(109,197,53,0.12); border: 1px solid rgba(109,197,53,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .csae-why__icon svg { width: 28px; height: 28px; fill: #6DC535; }
+        .csae-why__title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 1.5308rem + 0.3077vw, 1.75rem); color: #ffffff; margin-bottom: 10px; }
+        .csae-why__desc { font-size: 0.875rem; color: #a8bfd4; line-height: 1.65; }
+
+        /* =====================================================
+           5. ACCREDITATIONS
+        ===================================================== */
+
+        .csae-accred__header { text-align: center; margin-bottom: 64px; }
+        .csae-accred__header .csae-section-intro { margin: 0 auto; text-align: center; }
+        .csae-accred__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .csae-accred__card {
+            border: 1px solid rgba(109,197,53,0.4);
+            background: rgba(109,197,53,0.04);
+            padding: 52px 36px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .csae-accred__card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 24px rgba(109,197,53,0.1); border-color: rgba(109,197,53,0.65); }
+        .csae-accred__icon { width: 68px; height: 68px; background: rgba(109,197,53,0.12); border: 1px solid rgba(109,197,53,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+        .csae-accred__icon svg { width: 30px; height: 30px; fill: #6DC535; }
+        .csae-accred__name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.125rem; color: #ffffff; margin-bottom: 10px; text-align: center !important; }
+        .csae-accred__desc { font-size: 0.875rem; color: #a8bfd4; line-height: 1.7; text-align: center !important; }
+        .csae-accred__card * { text-align: center !important; }
+
+        /* =====================================================
+           6. TESTIMONIALS
+        ===================================================== */
+
+        .csae-reviews__header { text-align: center; margin-bottom: 64px; }
+        .csae-reviews__header .csae-section-intro { margin: 0 auto; }
+        .csae-reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .csae-review-card { background: #ffffff; border: 1px solid #e8edf5; border-left: 4px solid #6DC535; padding: 36px 32px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+        .csae-review-card:hover { box-shadow: 0 8px 36px rgba(0,0,0,0.12); transform: translateY(-3px); }
+        .csae-review-card__stars { display: flex; gap: 4px; }
+        .csae-review-card__stars svg { width: 20px; height: 20px; fill: #f5a623; }
+        .csae-review-card__text { font-size: 0.9375rem; color: #4a6070; line-height: 1.78; flex: 1; }
+        .csae-review-card__author { display: flex; align-items: center; gap: 14px; }
+        .csae-review-card__avatar { width: 46px; height: 46px; background: #111111; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1rem; color: #6DC535; flex-shrink: 0; }
+        .csae-review-card__name { font-weight: 700; font-size: 0.9375rem; color: #111111; }
+        .csae-review-card__badge { font-size: 0.6875rem; color: #4285f4; font-weight: 500; }
+
+        /* =====================================================
+           7. CTA STRIP
+        ===================================================== */
+
+        .csae-cta-strip { text-align: center; padding: 110px 0; background: #111111; border-top: 3px solid #6DC535; }
+        .csae-cta-strip .csae-section-title { color: #ffffff; margin-bottom: 18px; font-size: clamp(2.6rem, 2.3rem + 1.4vw, 3.4rem); }
+        .csae-cta-strip .csae-section-intro { color: #a8bfd4; margin: 0 auto 44px; font-size: 1.125rem; }
+        .csae-cta-strip__btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+        /* =====================================================
+           FADE-IN ANIMATION
+        ===================================================== */
+
+        @keyframes csae-fadein {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .csae-section,
+        .csae-stats,
+        .csae-cta-strip {
+            animation: csae-fadein 0.65s ease both;
+        }
+        #why-us {
+            animation: none;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1024px) {
+            .csae-why__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-accred__grid { grid-template-columns: repeat(3, 1fr); }
+            .csae-reviews__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-stats__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-stats__item:nth-child(2) { border-right: none; }
+            .csae-stats__item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+            .csae-stats__item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); border-right: none; }
+        }
+        @media (max-width: 768px) {
+            .csae-section { padding: 72px 0; }
+            .csae-container { padding: 0 20px; }
+            .csae-hero { min-height: 400px; }
+            .csae-hero__content { padding: 0 20px; }
+            .csae-story__grid { grid-template-columns: 1fr; gap: 40px; }
+            .csae-story__image { min-height: 300px; order: -1; }
+            .csae-why__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .csae-accred__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-reviews__grid { grid-template-columns: 1fr; }
+            .csae-cta-strip { padding: 80px 0; }
+        }
+        @media (max-width: 480px) {
+            .csae-section { padding: 60px 0; }
+            .csae-container { padding: 0 16px; }
+            .csae-hero { min-height: 400px; }
+            .csae-hero__content { padding: 0 16px; }
+            .csae-hero h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+            .csae-hero__sub { font-size: 0.9375rem; }
+            .csae-hero__ctas { flex-direction: column; align-items: stretch; gap: 12px; }
+            .csae-hero__ctas .csae-btn { width: 100%; text-align: center; }
+            .csae-stats__grid { grid-template-columns: repeat(2, 1fr); }
+            .csae-stats__item { padding: 36px 16px; border-right: none; border-top: none; }
+            .csae-stats__item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+            .csae-stats__item:nth-child(3), .csae-stats__item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+            .csae-stats__number { font-size: clamp(2.4rem, 9vw, 3rem); }
+            .csae-why__grid { grid-template-columns: 1fr; }
+            .csae-accred__grid { grid-template-columns: 1fr; }
+            .csae-section-title { font-size: clamp(1.8rem, 6.5vw, 2.2rem); }
+            .csae-cta-strip { padding: 72px 0; }
+            .csae-cta-strip .csae-section-title { font-size: clamp(2rem, 7.5vw, 2.6rem); }
+            .csae-cta-strip__btns { flex-direction: column; align-items: center; }
+            .csae-cta-strip__btns .csae-btn { width: 100%; max-width: 320px; text-align: center; }
+        }
+    </style>
+
+    <!-- Schema: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ElectricalContractor",
+        "name": "Cork Solar & Electrical",
+        "url": "https://www.csae.ie",
+        "logo": "https://www.csae.ie/assets/csae-logo-2.png",
+        "telephone": "+353857188103",
+        "email": "info@csae.ie",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Railway Cottage, Ballinamona, Mourneabbey",
+            "addressLocality": "Mallow",
+            "addressRegion": "Cork",
+            "postalCode": "P51RR22",
+            "addressCountry": "IE"
+        },
+        "areaServed": ["Cork City", "Mallow", "County Cork"],
+        "description": "RECI registered and SEAI approved electrical contractors serving residential and commercial clients across Cork City and County Cork.",
+        "openingHours": ["Mo-Fr 08:00-18:00"],
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Schema: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.csae.ie/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://www.csae.ie/about/"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+<div class="csae-page">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="csae-header" id="csae-header">
+        <div class="csae-header__inner">
+            <a href="/" class="csae-header__logo" aria-label="Cork Solar &amp; Electrical — Home">
+                <img src="/assets/csae-logo-2.png" alt="Cork Solar &amp; Electrical logo" class="csae-header__logo-mark" width="90" height="90">
+            </a>
+            <nav aria-label="Primary navigation">
+                <ul class="csae-header__nav" role="list">
+                    <li class="csae-header__nav-item"><a href="/" class="csae-header__nav-link">Home</a></li>
+                    <li class="csae-header__nav-item"><a href="/about/" class="csae-header__nav-link csae-active">About</a></li>
+                    <li class="csae-header__nav-item">
+                        <a href="/residential/" class="csae-header__nav-link" aria-haspopup="true">Residential</a>
+                        <ul class="csae-header__dropdown" role="list" aria-label="Residential services">
+                            <li><a href="/residential/" class="csae-header__dropdown-all">All Residential Services &rarr;</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/house-rewiring/" class="csae-header__dropdown-link">House Rewiring</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/new-build-electrical/" class="csae-header__dropdown-link">New Build Electrical</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/fuse-board-upgrades/" class="csae-header__dropdown-link">Fuse Board Upgrades</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/lighting-installation/" class="csae-header__dropdown-link">Lighting Installation</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/ev-charger-installation/" class="csae-header__dropdown-link">EV Charger Installation</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/electrical-safety-inspections/" class="csae-header__dropdown-link">Periodic Inspection Report (PIR)</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/socket-switch-installation/" class="csae-header__dropdown-link">Socket &amp; Switch Installation</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/electric-shower-installation/" class="csae-header__dropdown-link">Electric Shower Installation</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/smoke-carbon-monoxide-alarms/" class="csae-header__dropdown-link">Smoke &amp; CO Alarms</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/outdoor-garden-lighting/" class="csae-header__dropdown-link">Outdoor &amp; Garden Lighting</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/emergency-electrical-repairs/" class="csae-header__dropdown-link">Emergency Electrical Repairs</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/residential/electrical-consultancy/" class="csae-header__dropdown-link">Electrical Consultancy</a></li>
+                        </ul>
+                    </li>
+                    <li class="csae-header__nav-item">
+                        <a href="/commercial/" class="csae-header__nav-link" aria-haspopup="true">Commercial</a>
+                        <ul class="csae-header__dropdown" role="list" aria-label="Commercial services">
+                            <li><a href="/commercial/" class="csae-header__dropdown-all">All Commercial Services &rarr;</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/electrical-installation/" class="csae-header__dropdown-link">Commercial Electrical Installation</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/energy-efficiency-auditing/" class="csae-header__dropdown-link">Energy Efficiency Auditing</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/factory-plant-wiring/" class="csae-header__dropdown-link">Factory &amp; Plant Wiring</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/office-retail-fitouts/" class="csae-header__dropdown-link">Office &amp; Retail Fitouts</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/emergency-lighting/" class="csae-header__dropdown-link">Emergency Lighting</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/maintenance-contracts/" class="csae-header__dropdown-link">Electrical Maintenance Contracts</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/data-network-cabling/" class="csae-header__dropdown-link">Data &amp; Network Cabling</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/fuse-board-upgrades/" class="csae-header__dropdown-link">Commercial Fuse Board Upgrades</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/led-lighting-upgrades/" class="csae-header__dropdown-link">LED Lighting Upgrades</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/periodic-inspection-report/" class="csae-header__dropdown-link">Periodic Inspection Report (PIR)</a></li>
+                            <li class="csae-header__dropdown-item"><a href="/commercial/electrical-consultancy/" class="csae-header__dropdown-link">Electrical Consultancy</a></li>
+                        </ul>
+                    </li>
+                    <li class="csae-header__nav-item"><a href="/solar/" class="csae-header__nav-link">Solar</a></li>
+                    <li class="csae-header__nav-item"><a href="/contact/" class="csae-header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="csae-header__actions">
+                <a href="/contact/" class="csae-header__cta">Get a Quote</a>
+            </div>
+            <button class="csae-header__hamburger" id="csae-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="csae-mobile-nav">
+                <span></span><span></span><span></span>
+            </button>
+        </div><!-- /.csae-header__inner -->
+
+        <!-- Drawer overlay -->
+        <div class="csae-drawer__overlay" id="csae-drawer-overlay" aria-hidden="true"></div>
+
+        <!-- Side drawer -->
+        <nav class="csae-drawer" id="csae-mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+            <div class="csae-drawer__head">
+                <a href="/" aria-label="Cork Solar &amp; Electrical — Home">
+                    <img src="/assets/csae-logo-2.png" alt="Cork Solar &amp; Electrical" class="csae-drawer__logo-img" width="90" height="90">
+                </a>
+                <button class="csae-drawer__close" id="csae-drawer-close" aria-label="Close navigation menu">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="csae-drawer__body">
+                <button class="csae-drawer__accordion" aria-expanded="false" aria-controls="csae-acc-residential">
+                    Residential
+                    <svg class="csae-drawer__chevron" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="csae-drawer__accordion-panel" id="csae-acc-residential" aria-hidden="true">
+                    <a href="/residential/" class="csae-drawer__all-link">All Residential Services &rarr;</a>
+                    <a href="/residential/house-rewiring/" class="csae-drawer__sub-link">House Rewiring</a>
+                    <a href="/residential/new-build-electrical/" class="csae-drawer__sub-link">New Build Electrical</a>
+                    <a href="/residential/fuse-board-upgrades/" class="csae-drawer__sub-link">Fuse Board Upgrades</a>
+                    <a href="/residential/lighting-installation/" class="csae-drawer__sub-link">Lighting Installation</a>
+                    <a href="/residential/ev-charger-installation/" class="csae-drawer__sub-link">EV Charger Installation</a>
+                    <a href="/residential/electrical-safety-inspections/" class="csae-drawer__sub-link">Periodic Inspection Report (PIR)</a>
+                    <a href="/residential/socket-switch-installation/" class="csae-drawer__sub-link">Socket &amp; Switch Installation</a>
+                    <a href="/residential/electric-shower-installation/" class="csae-drawer__sub-link">Electric Shower Installation</a>
+                    <a href="/residential/smoke-carbon-monoxide-alarms/" class="csae-drawer__sub-link">Smoke &amp; CO Alarms</a>
+                    <a href="/residential/outdoor-garden-lighting/" class="csae-drawer__sub-link">Outdoor &amp; Garden Lighting</a>
+                    <a href="/residential/emergency-electrical-repairs/" class="csae-drawer__sub-link">Emergency Electrical Repairs</a>
+                    <a href="/residential/electrical-consultancy/" class="csae-drawer__sub-link">Electrical Consultancy</a>
+                </div>
+                <button class="csae-drawer__accordion" aria-expanded="false" aria-controls="csae-acc-commercial">
+                    Commercial
+                    <svg class="csae-drawer__chevron" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="csae-drawer__accordion-panel" id="csae-acc-commercial" aria-hidden="true">
+                    <a href="/commercial/" class="csae-drawer__all-link">All Commercial Services &rarr;</a>
+                    <a href="/commercial/electrical-installation/" class="csae-drawer__sub-link">Commercial Electrical Installation</a>
+                    <a href="/commercial/energy-efficiency-auditing/" class="csae-drawer__sub-link">Energy Efficiency Auditing</a>
+                    <a href="/commercial/factory-plant-wiring/" class="csae-drawer__sub-link">Factory &amp; Plant Wiring</a>
+                    <a href="/commercial/office-retail-fitouts/" class="csae-drawer__sub-link">Office &amp; Retail Fitouts</a>
+                    <a href="/commercial/emergency-lighting/" class="csae-drawer__sub-link">Emergency Lighting</a>
+                    <a href="/commercial/maintenance-contracts/" class="csae-drawer__sub-link">Electrical Maintenance Contracts</a>
+                    <a href="/commercial/data-network-cabling/" class="csae-drawer__sub-link">Data &amp; Network Cabling</a>
+                    <a href="/commercial/fuse-board-upgrades/" class="csae-drawer__sub-link">Commercial Fuse Board Upgrades</a>
+                    <a href="/commercial/led-lighting-upgrades/" class="csae-drawer__sub-link">LED Lighting Upgrades</a>
+                    <a href="/commercial/periodic-inspection-report/" class="csae-drawer__sub-link">Periodic Inspection Report (PIR)</a>
+                    <a href="/commercial/electrical-consultancy/" class="csae-drawer__sub-link">Electrical Consultancy</a>
+                </div>
+                <a href="/solar/" class="csae-drawer__link">Solar</a>
+                <a href="/about/" class="csae-drawer__link csae-active">About</a>
+                <a href="/contact/" class="csae-drawer__link">Contact</a>
+            </div>
+            <div class="csae-drawer__foot">
+                <a href="/contact/" class="csae-drawer__cta">Get a Free Quote</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main>
+
+        <!-- ===== 1. HERO ===== -->
+        <section class="csae-hero" aria-label="About page hero">
+            <div class="csae-hero__bg" aria-hidden="true"></div>
+            <div class="csae-hero__overlay" aria-hidden="true"></div>
+            <div class="csae-hero__content">
+                <h1>About <span style="color:#6DC535;">Cork Solar &amp; Electrical</span></h1>
+                <p class="csae-hero__sub">Cork's trusted electrical contractors — residential, commercial and solar</p>
+                <div class="csae-hero__badges">
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        SEAI Approved
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Safe Electric Registered
+                    </span>
+                    <span class="csae-hero__badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        Fully Insured
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. STATS BAR ===== -->
+        <section class="csae-stats" aria-label="Company stats">
+            <div class="csae-stats__grid">
+                <div class="csae-stats__item">
+                    <img src="/assets/icons/icon-trophy.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">10</div>
+                    <div class="csae-stats__label">Years of Experience</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="/assets/icons/icon-checklist.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">1000+</div>
+                    <div class="csae-stats__label">Jobs Completed</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="/assets/icons/icon-thumbsup.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">Same Day</div>
+                    <div class="csae-stats__label">Response</div>
+                </div>
+                <div class="csae-stats__item">
+                    <img src="/assets/icons/icon-shield.svg" alt="" class="csae-stats__icon" width="40" height="40">
+                    <div class="csae-stats__number">SEAI</div>
+                    <div class="csae-stats__label">Approved Installer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. OUR STORY ===== -->
+        <section class="csae-section csae-section--light" id="our-story" aria-labelledby="story-heading">
+            <div class="csae-container">
+                <div class="csae-story__grid">
+                    <div class="csae-story__image">
+                        <img src="/assets/csae-why-choose-us.jpg.png" alt="Cork Solar and Electrical team on site in Cork" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+                    </div>
+                    <div class="csae-story__text">
+                        <span class="csae-section-label">Our Story</span>
+                        <h2 class="csae-section-title" id="story-heading">Who We Are</h2>
+                        <p class="csae-story__body">Cork Solar &amp; Electrical was founded by David O'Leary with one goal in mind — to provide honest, reliable electrical work that Cork homeowners and businesses could actually depend on. What started as a one-man operation has grown over 10 years into a trusted local team of 10, including 6 fully qualified electricians and office administrator Marion, who keeps everything running smoothly behind the scenes.</p>
+                        <p class="csae-story__body">From the beginning, David built the business the old-fashioned way — by doing the job right, being straight with customers on price, and showing up when he said he would. The vast majority of our work still comes through word of mouth and referrals. That's not something we take for granted.</p>
+                        <p class="csae-story__body">We're a Cork company, through and through. Based in Mallow and covering Cork City and County, we work across the full range of <a href="/residential/">residential electrical services</a> and <a href="/commercial/">commercial electrical services</a> — from <a href="/residential/house-rewiring/">house rewires</a> and fuse board upgrades to office fit-outs, solar panel installations and emergency callouts.</p>
+                        <p class="csae-story__body">We are SEAI approved, Safe Electric registered, RECI certified and fully insured on every job. Whether it's a single socket or a full commercial fit-out, every job gets the same standard of care and workmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. WHY CHOOSE US ===== -->
+        <section class="csae-section csae-section--dark" id="why-us" aria-labelledby="why-heading">
+            <div class="csae-container">
+                <div style="text-align:center;">
+                    <span class="csae-section-label">Why CSAE</span>
+                    <h2 class="csae-section-title" id="why-heading" style="color:#ffffff;">Why Choose Cork Solar &amp; Electrical</h2>
+                    <p class="csae-section-intro" style="margin:0 auto;">We're a local Cork company with a reputation built on quality workmanship, honest pricing and reliable service every time.</p>
+                </div>
+                <div class="csae-why__grid">
+                    <div class="csae-why__item">
+                        <div class="csae-why__icon" aria-hidden="true">
+                            <img src="/assets/icons/icon-fast-response.svg" alt="" width="40" height="40">
+                        </div>
+                        <h3 class="csae-why__title">Reliable Service</h3>
+                        <p class="csae-why__desc">We show up on time, complete the job to the highest standard and leave your property clean and tidy every single time.</p>
+                    </div>
+                    <div class="csae-why__item">
+                        <div class="csae-why__icon" aria-hidden="true">
+                            <img src="/assets/icons/icon-umbrella.svg" alt="" width="40" height="40">
+                        </div>
+                        <h3 class="csae-why__title">Affordable Pricing</h3>
+                        <p class="csae-why__desc">Competitive, transparent pricing with no hidden charges. We provide free quotes with no obligation on every job.</p>
+                    </div>
+                    <div class="csae-why__item">
+                        <div class="csae-why__icon" aria-hidden="true">
+                            <img src="/assets/icons/icon-shield.svg" alt="" width="40" height="40">
+                        </div>
+                        <h3 class="csae-why__title">Fully Insured</h3>
+                        <p class="csae-why__desc">Full public liability and professional indemnity insurance on every job. Your property and family are always protected.</p>
+                    </div>
+                    <div class="csae-why__item">
+                        <div class="csae-why__icon" aria-hidden="true">
+                            <img src="/assets/icons/icon-checklist.svg" alt="" width="40" height="40">
+                        </div>
+                        <h3 class="csae-why__title">Free Quotes</h3>
+                        <p class="csae-why__desc">No call-out fee on quotes. We'll assess the job, give you a clear written quote and let you decide — no pressure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. ACCREDITATIONS ===== -->
+        <section class="csae-section csae-section--dark" id="accreditations" aria-labelledby="accred-heading" style="background:#0a0a0a;">
+            <div class="csae-container">
+                <div class="csae-accred__header">
+                    <span class="csae-section-label">Credentials</span>
+                    <h2 class="csae-section-title" id="accred-heading" style="color:#ffffff;">Our Accreditations</h2>
+                    <p class="csae-section-intro">Cork Solar &amp; Electrical holds all required accreditations to carry out electrical and solar work across Ireland.</p>
+                </div>
+                <div class="csae-accred__grid">
+                    <div class="csae-accred__card">
+                        <div class="csae-accred__icon" aria-hidden="true">
+                            <img src="/assets/icons/icon-fast-response.svg" alt="" width="40" height="40">
+                        </div>
+                        <div class="csae-accred__name">SEAI Approved Installer</div>
+                        <p class="csae-accred__desc">Registered with the Sustainable Energy Authority of Ireland. Customers qualify for SEAI grants on solar panel and EV charger installations.</p>
+                    </div>
+                    <div class="csae-accred__card">
+                        <div class="csae-accred__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="csae-accred__name">Safe Electric Registered</div>
+                        <p class="csae-accred__desc">Registered with Safe Electric — Ireland's national register of competent electricians. All work is certified and compliant with ETCI wiring regulations.</p>
+                    </div>
+                    <div class="csae-accred__card">
+                        <div class="csae-accred__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="6" fill="none" stroke="#6DC535" stroke-width="2"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" fill="none" stroke="#6DC535" stroke-width="2"/></svg>
+                        </div>
+                        <div class="csae-accred__name">RECI Registered</div>
+                        <p class="csae-accred__desc">Members of the Register of Electrical Contractors of Ireland. RECI membership guarantees a high standard of electrical workmanship and safety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. TESTIMONIALS ===== -->
+        <section class="csae-section csae-section--light" id="testimonials" aria-labelledby="testimonials-heading">
+            <div class="csae-container">
+                <div class="csae-reviews__header">
+                    <span class="csae-section-label">Customer Reviews</span>
+                    <h2 class="csae-section-title" id="testimonials-heading">What Our Customers Say</h2>
+                    <p class="csae-section-intro">Rated 5 stars by homeowners and businesses across Cork City and County.</p>
+                </div>
+                <div class="csae-reviews__grid">
+                    <div class="csae-review-card">
+                        <div class="csae-review-card__stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="csae-review-card__text">"David and his team rewired our entire house in Douglas last spring. Absolutely spotless work — they were in and out in 3 days, left the place tidy and explained everything clearly. Couldn't recommend them highly enough."</p>
+                        <div class="csae-review-card__author">
+                            <div class="csae-review-card__avatar" aria-hidden="true">SC</div>
+                            <div>
+                                <div class="csae-review-card__name">Siobhán C.</div>
+                                <div class="csae-review-card__badge">Google Review &bull; Cork City</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="csae-review-card">
+                        <div class="csae-review-card__stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="csae-review-card__text">"Used Cork Solar &amp; Electrical for a full office fitout in Mallow. Professional from start to finish — competitive quote, turned up on time and the quality of the work was excellent. Will definitely be using them again."</p>
+                        <div class="csae-review-card__author">
+                            <div class="csae-review-card__avatar" aria-hidden="true">PM</div>
+                            <div>
+                                <div class="csae-review-card__name">Pádraic M.</div>
+                                <div class="csae-review-card__badge">Google Review &bull; Mallow</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="csae-review-card">
+                        <div class="csae-review-card__stars" aria-label="5 stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="csae-review-card__text">"Had an emergency with a tripping fuse board on a Saturday morning — rang Cork Solar &amp; Electrical and they had someone out within the hour. Sorted the problem quickly and charged a very fair price. Great service."</p>
+                        <div class="csae-review-card__author">
+                            <div class="csae-review-card__avatar" aria-hidden="true">AO</div>
+                            <div>
+                                <div class="csae-review-card__name">Aoife O'S.</div>
+                                <div class="csae-review-card__badge">Google Review &bull; Ballincollig</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 7. CTA STRIP ===== -->
+        <section class="csae-cta-strip" id="cta" aria-labelledby="cta-heading">
+            <div class="csae-container">
+                <span class="csae-section-label">Get Started</span>
+                <h2 class="csae-section-title" id="cta-heading">Ready to Get Started?</h2>
+                <p class="csae-section-intro">Get in touch today for a free, no-obligation quote on any electrical or solar job across Cork City and County Cork.</p>
+                <div class="csae-cta-strip__btns">
+                    <a href="/contact/" class="csae-btn csae-btn--green">Get a Free Quote</a>
+                    <a href="tel:0857188103" class="csae-btn csae-btn--outline-white">Call 085 718 8103</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="csae-footer" id="csae-footer">
+        <div class="csae-footer__main">
+            <div class="csae-footer__logo-col">
+                <a href="/" class="csae-footer__logo-link" aria-label="Cork Solar &amp; Electrical — Home">
+                    <img src="/assets/csae-logo-2.png" alt="Cork Solar &amp; Electrical" class="csae-footer__logo-img" width="160" height="80">
+                </a>
+                <p class="csae-footer__bio">Cork Solar &amp; Electrical are SEAI approved electricians serving Cork City and County. Specialists in residential and commercial electrical installations and solar energy systems.</p>
+                <div class="csae-footer__social">
+                    <a href="https://www.facebook.com/profile.php?id=61570810972605" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Facebook" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/icons/facebook.svg" alt="" width="20" height="20" aria-hidden="true">
+                    </a>
+                    <a href="https://www.instagram.com/csae.ie" class="csae-footer__social-link" aria-label="Cork Solar &amp; Electrical on Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/icons/instagram.svg" alt="" width="20" height="20" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="csae-footer__col-title">Quick Links</h3>
+                <ul class="csae-footer__links">
+                    <li><a href="/" class="csae-footer__link">Home</a></li>
+                    <li><a href="/about/" class="csae-footer__link">About Us</a></li>
+                    <li><a href="/residential/" class="csae-footer__link">Residential</a></li>
+                    <li><a href="/commercial/" class="csae-footer__link">Commercial</a></li>
+                    <li><a href="/solar/" class="csae-footer__link">Solar</a></li>
+                    <li><a href="/contact/" class="csae-footer__link">Contact</a></li>
+                    <li><a href="/contact/" class="csae-footer__link">Get a Quote</a></li>
+                </ul>
+            </div>
+            <div class="csae-footer__contact-col">
+                <h3 class="csae-footer__col-title">Contact Us</h3>
+                <ul class="csae-footer__contact-list">
+                    <li class="csae-footer__contact-item">
+                        <span class="csae-footer__contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V21a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.19z"/></svg></span>
+                        <div class="csae-footer__contact-text">
+                            <span class="csae-footer__contact-label">Phone</span>
+                            <a href="tel:0857188103" class="csae-footer__contact-value">085 718 8103</a>
+                        </div>
+                    </li>
+                    <li class="csae-footer__contact-item">
+                        <span class="csae-footer__contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="#6DC535" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="#6DC535" stroke-width="2"/></svg></span>
+                        <div class="csae-footer__contact-text">
+                            <span class="csae-footer__contact-label">Email</span>
+                            <a href="mailto:info@csae.ie" class="csae-footer__contact-value">info@csae.ie</a>
+                        </div>
+                    </li>
+                    <li class="csae-footer__contact-item">
+                        <span class="csae-footer__contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" fill="none" stroke="#6DC535" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="#6DC535" stroke-width="2"/></svg></span>
+                        <div class="csae-footer__contact-text">
+                            <span class="csae-footer__contact-label">Address</span>
+                            <span class="csae-footer__contact-value">Railway Cottage, Ballinamona,<br>Mourneabbey, Mallow, Co. Cork</span>
+                        </div>
+                    </li>
+                    <li class="csae-footer__contact-item">
+                        <span class="csae-footer__contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#6DC535" stroke-width="2"/><polyline points="12,7 12,12 15,15" stroke="#6DC535" stroke-width="2" stroke-linecap="round"/></svg></span>
+                        <div class="csae-footer__contact-text">
+                            <span class="csae-footer__contact-label">Opening Hours</span>
+                            <span class="csae-footer__contact-value">Mon – Fri: 8am – 6pm<br>Sat: By Appointment</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="csae-footer__col-title">Opening Hours</h3>
+                <ul class="csae-footer__links">
+                    <li><span class="csae-footer__link" style="cursor:default;">Monday – Friday<br><strong style="color:#ffffff;">8am – 6pm</strong></span></li>
+                    <li><span class="csae-footer__link" style="cursor:default;">Saturday<br><strong style="color:#ffffff;">By Appointment</strong></span></li>
+                    <li><span class="csae-footer__link" style="cursor:default;">Sunday<br><strong style="color:#ffffff;">Closed</strong></span></li>
+                </ul>
+                <img src="/assets/safe-electric-1.png" alt="Safe Electric Registered" width="80" style="margin-top:16px;display:block;">
+            </div>
+        </div>
+        <div class="csae-footer__bottom">
+            <div class="csae-footer__bottom-inner">
+                <p class="csae-footer__copyright">&copy; <span id="csae-year">2025</span> Cork Solar &amp; Electrical. All rights reserved.</p>
+                <ul class="csae-footer__bottom-links">
+                    <li><a href="/privacy-policy/" class="csae-footer__bottom-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- /.csae-page -->
+
+<script>
+    var el = document.getElementById('csae-year');
+    if (el) el.textContent = new Date().getFullYear();
+
+    (function () {
+        'use strict';
+        var btn = document.getElementById('csae-hamburger-btn');
+        var drawer = document.getElementById('csae-mobile-nav');
+        var overlay = document.getElementById('csae-drawer-overlay');
+        var closeBtn = document.getElementById('csae-drawer-close');
+        if (!btn || !drawer) return;
+        function openDrawer() {
+            btn.setAttribute('aria-expanded','true');
+            btn.setAttribute('aria-label','Close navigation menu');
+            drawer.classList.add('csae-drawer--open');
+            drawer.setAttribute('aria-hidden','false');
+            if (overlay) { overlay.classList.add('csae-drawer--visible'); overlay.setAttribute('aria-hidden','false'); }
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDrawer() {
+            btn.setAttribute('aria-expanded','false');
+            btn.setAttribute('aria-label','Open navigation menu');
+            drawer.classList.remove('csae-drawer--open');
+            drawer.setAttribute('aria-hidden','true');
+            if (overlay) { overlay.classList.remove('csae-drawer--visible'); overlay.setAttribute('aria-hidden','true'); }
+            document.body.style.overflow = '';
+        }
+        btn.addEventListener('click', function () { btn.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer(); });
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if (overlay) overlay.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeDrawer(); btn.focus(); } });
+        document.querySelectorAll('.csae-drawer__accordion').forEach(function (accBtn) {
+            accBtn.addEventListener('click', function () {
+                var panel = document.getElementById(accBtn.getAttribute('aria-controls'));
+                var open = accBtn.getAttribute('aria-expanded') === 'true';
+                accBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+                panel.setAttribute('aria-hidden', open ? 'true' : 'false');
+                panel.classList.toggle('csae-acc-open', !open);
+            });
+        });
+    }());
+</script>
+
+</body>
+</html>

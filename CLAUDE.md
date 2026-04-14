@@ -14,51 +14,60 @@ Building a full multi-page website for Cork Solar & Electrical (CSAE), a residen
 - Zero border radius on buttons, sharp edges throughout
 - Design inspiration: Prowired.co.uk (dark, authoritative, sectored) combined with Capital Electrical clean light sections
 
-## Site Structure — Build Each As Separate HTML File
-- header.html (fixed nav, phone number, logo, CTA button)
-- footer.html (logo, links, contact details, accreditations, copyright)
-- index.html (Homepage)
-- about.html (About Page)
-- residential.html (Residential Services overview)
-- commercial.html (Commercial Services overview)
-- solar.html (Solar Page)
-- contact.html (Contact Page)
+## Site Structure — Clean URL Subfolder Architecture
 
-### Residential Sub-Service Pages (each a separate file)
-- house-rewiring.html
-- new-build-electrical.html
-- fuse-board-upgrades.html
-- lighting-installation.html
-- ev-charger-installation.html
-- electrical-safety-inspections.html
-- socket-switch-installation.html
-- electric-shower-installation.html
-- kitchen-appliance-wiring.html
-- smoke-carbon-monoxide-alarms.html
-- outdoor-garden-lighting.html
-- emergency-electrical-repairs.html
+All pages live as `index.html` inside a named subfolder so Vercel serves them as clean URLs (e.g. `/residential/house-rewiring/`).
 
-### Commercial Sub-Service Pages (each a separate file)
-- commercial-electrical-installation.html
-- security-systems-access-control.html
-- generator-backup-systems.html
-- energy-efficiency-auditing.html
-- factory-plant-wiring.html
-- machinery-installations.html
-- industrial-lighting.html
-- office-retail-fitouts.html
-- emergency-lighting.html
-- electrical-maintenance-contracts.html
-- data-network-cabling.html
-- commercial-fuse-board-upgrades.html
-- led-lighting-upgrades.html
-- periodic-electrical-inspections.html
+### Root Files
+- `index.html` — Homepage (https://www.csae.ie/)
+- `header.html` — Shared header component (reference only)
+- `footer.html` — Shared footer component (reference only)
+
+### Main Pages
+- `about/index.html` → https://www.csae.ie/about/
+- `residential/index.html` → https://www.csae.ie/residential/
+- `commercial/index.html` → https://www.csae.ie/commercial/
+- `solar/index.html` → https://www.csae.ie/solar/
+- `contact/index.html` → https://www.csae.ie/contact/
+- `privacy-policy/index.html` → https://www.csae.ie/privacy-policy/
+- `thankyou/index.html` → https://www.csae.ie/thankyou/
+
+### Residential Sub-Service Pages
+- `residential/house-rewiring/index.html`
+- `residential/new-build-electrical/index.html`
+- `residential/fuse-board-upgrades/index.html`
+- `residential/lighting-installation/index.html`
+- `residential/ev-charger-installation/index.html`
+- `residential/electrical-safety-inspections/index.html`
+- `residential/socket-switch-installation/index.html`
+- `residential/electric-shower-installation/index.html`
+- `residential/kitchen-appliance-wiring/index.html`
+- `residential/smoke-carbon-monoxide-alarms/index.html`
+- `residential/outdoor-garden-lighting/index.html`
+- `residential/emergency-electrical-repairs/index.html`
+- `residential/electrical-consultancy/index.html`
+- `residential/periodic-inspection-report/index.html`
+
+### Commercial Sub-Service Pages
+- `commercial/electrical-installation/index.html`
+- `commercial/fuse-board-upgrades/index.html`
+- `commercial/electrical-consultancy/index.html`
+- `commercial/maintenance-contracts/index.html`
+- `commercial/energy-efficiency-auditing/index.html`
+- `commercial/factory-plant-wiring/index.html`
+- `commercial/office-retail-fitouts/index.html`
+- `commercial/emergency-lighting/index.html`
+- `commercial/data-network-cabling/index.html`
+- `commercial/led-lighting-upgrades/index.html`
+- `commercial/security-systems/index.html`
+- `commercial/generator-backup-systems/index.html`
+- `commercial/periodic-inspection-report/index.html`
 
 ## Contact Details
 - Phone: 0857188103
 - Email: info@csae.ie
 - Address: Cork Solar and Electrical, Railway Cottage, Ballinamona, Mourneabbey, Mallow, P51RR22
-- Domain: corksolarandelectrical.ie
+- Domain: https://www.csae.ie
 
 ## SEO Rules — Apply To Every Single Page
 - Unique H1 per page targeting a specific keyword
@@ -66,10 +75,14 @@ Building a full multi-page website for Cork Solar & Electrical (CSAE), a residen
 - H3s for sub-sections and service lists
 - Unique meta title and meta description per page
 - Schema markup on every page — LocalBusiness schema on homepage and contact, Service schema on all service pages
-- Canonical tag on every page
+- Canonical tag on every page using https://www.csae.ie as base domain
 - Alt text on every image placeholder
-- Clean URL structure matching the filenames above
+- Clean URL structure — all pages served as /path/ (no .html extensions)
 - Target location keywords throughout: Cork, Mallow, Cork City, County Cork
+
+## Asset Paths
+- All asset paths use absolute paths from root: `/assets/filename.ext`
+- Never use relative paths like `assets/` or `../assets/` — always `/assets/`
 
 ## Design Rules
 - Fixed header with blur backdrop, logo left, nav centre, phone number + Get a Quote CTA button right
@@ -91,17 +104,9 @@ Building a full multi-page website for Cork Solar & Electrical (CSAE), a residen
 - Label format: [IMAGE: Hero — electrician working on fuse board Cork]
 - We will replace with Higgsfield AI generated images later
 
-## Build Order
-1. header.html
-2. footer.html
-3. index.html
-4. about.html
-5. residential.html
-6. commercial.html
-7. solar.html
-8. contact.html
-9. Then all residential sub-service pages
-10. Then all commercial sub-service pages
+## Vercel Config
+- `vercel.json` at root with `cleanUrls: true` and `trailingSlash: false`
+- Deployed to: https://csae-website.vercel.app (confirm after deployment)
 
 ## Rules
 - Always read this CLAUDE.md before doing anything
@@ -110,4 +115,6 @@ Building a full multi-page website for Cork Solar & Electrical (CSAE), a residen
 - Use placeholder text [PLACEHOLDER: description] anywhere David's specific info is needed
 - Every page must be fully self-contained HTML/CSS — no external frameworks except Google Fonts
 - All CSS scoped to avoid Elementor conflicts when deployed to WordPress
+- All internal links must use clean absolute paths (e.g. /residential/house-rewiring/) not .html filenames
+- All asset paths must use /assets/ (absolute, not relative)
 - Test mobile layout mentally before declaring each file done
